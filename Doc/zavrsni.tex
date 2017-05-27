@@ -1,0 +1,78 @@
+\documentclass[times, utf8, zavrsni]{fer}
+\usepackage{booktabs}
+\graphicspath{/home/mateo/Fakultet/Završni rad/Slike}
+\begin{document}
+
+% TODO: Navedite broj rada.
+\thesisnumber{5133}
+
+% TODO: Navedite naslov rada.
+\title{Algoritam staničenja velike baze podataka genoma}
+
+% TODO: Navedite vaše ime i prezime.
+\author{Mateo Stjepanović}
+
+\maketitle
+
+% Ispis stranice s napomenom o umetanju izvornika rada. Uklonite naredbu \izvornik ako želite izbaciti tu stranicu.
+\izvornik
+
+% Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
+\zahvala{Zahvaljujem mentorici doc.\ dr.\ sc.\ Mirjana Domazet-Lošo na podršci.}
+
+\tableofcontents
+
+\chapter{Uvod}
+Bioinformatika je područje koje se bavi razvojem programa i metoda za interpretiranje bioloških podataka.Kao interdisciplinarna znanost bioinformatika spaja matematiku, statistiku, računalnu znanost te druge prirodno matematičke znanosti. U posljednih nekoliko godina bionformatika doživljava nagli porast, te se uspjevaju mapirati genomi mnogih živih bića. Između svih dijelova bioinformatike najviše se istječu metode analiziranja genoma te određivanja njihovoh položaja u taksonomskom stablu.
+Upravo u tom polju postoje mnogi alati koji se u mnogočemu razlikuju.
+\\ U tom polju veliki posao su napravili Derrick E. Wood i Steven L. Salzberg sa alatom nazvanim Kraken.\\{\textit{Kraken is ultrafast and high accurate program for assigning taxonomic labels to metagenomic DNA sequences.}\footnote[1]{Wood and Salzberg: \textbf{Kraken: ultrafast metagenomic sequence classification using exact alignments.} \textit{Genome Biology} 2914 15:R46}\\ Kraken je alat za metagenomsku analizu podataka,  koji se ističe svojom brzinom i točnošću. Dotadašnji alati su se mogli podjeliti na one brze te one točne, te je upravo taj razlog bio problem kod mnogih znanstvenika. Trebalo je naći neku sredinu te spojiti ta dva uvjeta u jedan alat koji će moći sve to i još mnogo toga. Kraken radi na principu poravnanja k-mera te , slanjem upita u bazu podataka genoma, uspoređivanja te postavljanja genoma u taksonomsku granu. Ta metoda rada daje nevjerovatnu preciznost od preko 90\%. Ta preciznost ovisi mnogo o već spomenutoj bazi podataka genoma, koja je jako velika ( standardna baza je veličine 70ak GB ).
+
+
+
+\chapter{Definiranje problema}
+Kraken radi na principu razbijanja ulaznog podatka na preklapajuće k-mere.
+\\K-meri se nazivaju svi mogući podnizova ulaznog niza. U bioinformatici se k-merama nazivaju svi mogući podnizovi baza aminokiselina u nekom uzorku genoma.
+\\Svaki k-mer se tada mapira prema algoritmu LCA(\textit{Lower common ancestor}) prema genomima koji su spremljeni u bazi podataka.
+
+
+
+Radi brzine izvođenja ta baza se učitava u RAM računala. Standardna baza podataka koju koristi Kraken veličine 70ak GB , te to predstavlja problem na računalima ograničenih resursa. Kao jedno rješenje tog problema može se generirati vlastita baza, ili koristiti baza podataka nazvana MiniKraken. Iako znatno manja, te time omogućava korištenje spomenutog alata, to rješenje uvelike utječe na kvalitetu očitanja.
+
+%TODO Upisati tablicu odnosa Kraken i MiniKraken baze podataka
+
+Iako se iz dane tablice vidi da se preciznost korištenjem MiniKraken baze povećala u odnosu na Kraken bazu podataka. S druge strane senzitivnost jako opada, što nam predstavlja veći problem.\\Ideja ovog rada je da se algoritmima sličnim algoritmima straničenja osposobi svako računalo na rad sa standardnom bazom podataka. Algoritam radi na način da je ulazna baza podataka razdijeli na manje jedinice proizvoljne veličine, te se indeksiranjem istih stvori lista indexa koja će se lako moći pretraživati, te tako učitavati samo ona jedinica koja se po k-merima slaže sa našim ulaznim podatkom. Iako se ovaj radi odnosi isključivo na Kraken, izgradit će se pseudokod koji će se moć implementirati u ovisnosti kako izgleda naša baza podataka.
+\chapter{Strukture podataka i algoritmi u Kraken-u}
+\subsection{Struktura baze podataka}
+Baza podataka koju koristi Kraken se iz podataka (genoma) povučenih sa NCBI-ove službene stranice. Budući da Kraken radi na principu uspoređivanja k-mera baza podataka se također sastoji od podataka raspoređenim po k-merima. Nakon povlačenja podataka sa NCBI-a koristi se Jellyfish za raspoređivanje k-mera. Kraken zadano koristi 31-mere, tj za svaki podataka traži sve moguće podskupove do 31 element, u ovom slučaju se to odnosi na jednu nukleotidnu bazu. Za indeksiranje i raspoređivanje podataka koristi se koncept minimizera, kojega su razvili Roberts M, Hayes W, Hunt B, Mount s, te Yorke J. Prilikom sortiranja i indeksiranja se stvaraju svojevrsni kontejneri koji sadržavaju one podatke ciji k-meri imaju iste minimizer-e, tako da prilikom klasificiranja podatka se binarno pretražuje samo određeni kontejner.\\ Tu dolazimo do ideje rješenja našeg problema. Iskorištavanjem već danih indeksa i kontejnera će se svaki kontejner pretvoriti u posebnu bazu podataka te će se ista sama učitavati u RAM. Stvoritelji Krakena su uzeli u obzir i da je moguć slučaj da veliki broj k-mera ima isti minimizer, te su to riješili tako što se nad svakim kontejnerom izvrši XOR operacija koja odbaci pola bitova te tako su uspjelu približno dobiti normalnu distribuciju podataka. To rješenje će pomoći i u našem problemu, tako da nećemo morati paziti na to da svaki kontejner bude približne veličine te da veličina jednog ne bude prevelika za naš RAM.
+
+%TODO ubaciti pseudokod indeksiranja te kreiranja kontejnera
+%TODO Unijeti tablicu izgleda strukture baze podataka
+
+\subsection{Algoritam klasifikacije podataka}
+%TODO unijeti sliku načina klasificiranja podataka
+Za klasifikaciju ulaznog podatka prvo se određuju i mapiraju svi k-meri samog podatka. Tada se za svaki pojedini k-mer određuje podrijeklo te se, na osnovu LCA(\textit{Lower Common Ancestor}), određuje taksonomsko stablo svakog k-mera. Budući da se radi o jako velikim podacima, te se stvara veliki broj k-mera to taksonomsko stablo vrlo lako može voditi do vrste koja nije nikako povezana s našim podatkom. Zbog toga se za svaki put određuju težine koje tada kompenziraju moguće pogreške. Ako postoji više puteva s istim težinama do listova tada se na njima ponovno radi LCA algoritam.
+\subsection{LCA(\textit{Lower Common Ancestor})}
+\chapter{Algoritmi indeksiranja i pretrage}
+\chapter{Pseudokod i razrada algoritma}
+\chapter{Analiza učinkovitosti rješenja}
+\chapter{Zaključak}
+Zaključak.
+
+\bibliography{literatura}
+\bibliographystyle{fer}
+
+\begin{sazetak}
+Sažetak na hrvatskom jeziku.
+
+\kljucnerijeci{Ključne riječi, odvojene zarezima.}
+\end{sazetak}
+
+% TODO: Navedite naslov na engleskom jeziku.
+\engtitle{Title}
+\begin{abstract}
+Abstract.
+
+\keywords{Keywords.}
+\end{abstract}
+
+\end{document}
