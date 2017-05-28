@@ -13,3 +13,15 @@ for index in baseindex:
       loadedDB = index;
   else:
     send no entry;
+
+
+clasify.cpp
+--------------------------------------------------------------------------------
+parse_command_line;
+db_file.open_file(name)
+db_file.load_file();
+Database = KrakenDB(db_file.ptr());
+set_k(Database.get_k())
+idx_file.open_file(file);
+idx.load_file();
+Index
