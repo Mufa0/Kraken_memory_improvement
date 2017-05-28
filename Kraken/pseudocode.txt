@@ -1,0 +1,15 @@
+index loadedDB
+for b in bin:
+  create KrakenDB;
+  baseList <-KrakenDB
+  baseindex<-b.index;
+
+for index in baseindex:
+  if input.kmer in index:
+    if loadedDB == index:
+      classify
+    else:
+      load datebase baseList.get(index)
+      loadedDB = index;
+  else:
+    send no entry;
