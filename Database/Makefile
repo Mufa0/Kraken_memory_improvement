@@ -1,4 +1,4 @@
-CC = gcc
+CC = g++
 
  # compiler flags:
  #  -g    adds debugging information to the executable file
@@ -10,8 +10,8 @@ CC = gcc
 
  all: $(TARGET)
 
- $(TARGET): $(TARGET).c
-	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+ $(TARGET): $(TARGET).cpp
+	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp -l sqlite3
 
  clean:
 	 $(RM) $(TARGET)
