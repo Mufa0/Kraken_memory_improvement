@@ -61,11 +61,18 @@ int main(int argc, char **argv) {
     idx_file.load_file();
   KrakenDBIndex db_index(idx_file.ptr());
   Database.set_index(&db_index);
+
+  for (int i = 0; i < sizeof(Database.get_pair_ptr());++i){
+      fprintf(stderr, "%d\n", Database.get_pair_ptr()[i]);
+  }
+
   return 0;
 }
 void parse_command_line(int argc, char **argv) {
   int opt;
   long long sig;
+  DB_filename = argv[1];
+  Index_filename = argv[2];
 
 }
 
