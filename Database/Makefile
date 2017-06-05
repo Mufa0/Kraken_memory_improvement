@@ -1,4 +1,4 @@
-CC = g++
+CC = gcc
 
  # compiler flags:
  #  -g    adds debugging information to the executable file
@@ -10,8 +10,8 @@ CC = g++
 
  all: $(TARGET)
 
- $(TARGET): $(TARGET).cpp
-	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
+ $(TARGET): $(TARGET).c
+	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
  clean:
 	 $(RM) $(TARGET)

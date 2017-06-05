@@ -5,6 +5,7 @@
 #include "ctype.h"
 #include "unistd.h"
 #include "stdlib.h"
+
 int size = 2000;
 char databaseFileName[1024];
 
