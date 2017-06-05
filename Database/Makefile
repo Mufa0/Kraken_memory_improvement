@@ -10,8 +10,8 @@ CC = g++
 
  all: $(TARGET)
 
- $(TARGET): $(TARGET).c
-	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+ $(TARGET): $(TARGET).cpp
+	 $(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
 
  clean:
 	 $(RM) $(TARGET)
