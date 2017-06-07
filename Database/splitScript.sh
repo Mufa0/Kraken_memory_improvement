@@ -47,3 +47,6 @@ for i in $(ls ../Splitted);do
   sqlite3 $fName < ../Splitted/$i 2> /dev/null
   counter=$((counter+1))
 done;
+sleep 5
+cd ..
+./databaseSplit $(ls -l Databases | wc -l)
