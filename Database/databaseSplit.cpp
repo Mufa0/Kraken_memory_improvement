@@ -43,7 +43,7 @@ int main (int argc, char **argv){
 void parse_command_line(int argc, char **argv) {
     memset(databaseFileName,'\0',1024);
     int opt;
-    long long sig;
+    //long long sig;
     while ((opt = getopt(argc, argv, "s")) != -1) {
         switch (opt) {
         case 's':
