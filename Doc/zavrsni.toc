@@ -1,14 +1,16 @@
 \select@language {croatian}
 \contentsline {chapter}{\numberline {1}Uvod}{1}
-\contentsline {chapter}{\numberline {2}Definiranje problema}{2}
-\contentsline {chapter}{\numberline {3}Strukture podataka i algoritmi u Kraken-u}{3}
-\contentsline {subsection}{\numberline {3.0.1}Struktura baze podataka}{3}
-\contentsline {subsection}{\numberline {3.0.2}Algoritam klasifikacije podataka}{3}
-\contentsline {subsection}{\numberline {3.0.3}LCA(\textit {Lower Common Ancestor})}{4}
-\contentsline {chapter}{\numberline {4}Algoritmi indeksiranja i pretrage}{5}
-\contentsline {subsection}{\numberline {4.0.1}Minimizer - algoritam za reduciranje podataka}{5}
-\contentsline {subsection}{\numberline {4.0.2}Binarno pretra\IeC {\v z}ivanje}{5}
-\contentsline {chapter}{\numberline {5}Pseudokod i razrada algoritma}{6}
-\contentsline {chapter}{\numberline {6}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{7}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{8}
-\contentsline {chapter}{Literatura}{9}
+\contentsline {chapter}{\numberline {2}Definiranje problema}{3}
+\contentsline {chapter}{\numberline {3}Strukture podataka i algoritmi u Kraken-u}{4}
+\contentsline {subsection}{\numberline {3.0.1}Baza podataka}{4}
+\contentsline {subsubsection}{Kreiranje baze podataka}{4}
+\contentsline {subsubsection}{Strukture baze podataka}{5}
+\contentsline {subsection}{\numberline {3.0.2}Algoritam klasifikacije podataka}{7}
+\contentsline {subsection}{\numberline {3.0.3}LCA(\textit {Lower Common Ancestor})}{8}
+\contentsline {chapter}{\numberline {4}Algoritmi indeksiranja i pretrage}{9}
+\contentsline {subsection}{\numberline {4.0.1}Minimizer - algoritam za reduciranje podataka}{9}
+\contentsline {subsection}{\numberline {4.0.2}Binarno pretra\IeC {\v z}ivanje}{9}
+\contentsline {chapter}{\numberline {5}Pseudokod i razrada algoritma}{10}
+\contentsline {chapter}{\numberline {6}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{11}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{12}
+\contentsline {chapter}{Literatura}{13}

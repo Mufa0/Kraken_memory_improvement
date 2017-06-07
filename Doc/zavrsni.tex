@@ -1,8 +1,11 @@
 \documentclass[times, utf8, zavrsni]{fer}
 \usepackage{booktabs}
-\graphicspath{/home/mateo/Fakultet/Završni rad/Slike}
+\usepackage{graphicx}
+\usepackage[]{algorithm2e}
+\usepackage{caption}
+\graphicspath{{/home/mateo/Git/Kraken_memory_improvement/Pictures/}}
 \begin{document}
-
+\captionsetup[algorithm2e]{name=Algoritam}
 % TODO: Navedite broj rada.
 \thesisnumber{5133}
 
@@ -23,34 +26,119 @@
 \tableofcontents
 
 \chapter{Uvod}
-Bioinformatika je područje koje se bavi razvojem programa i metoda za interpretiranje bioloških podataka.Kao interdisciplinarna znanost bioinformatika spaja matematiku, statistiku, računalnu znanost te druge prirodno matematičke znanosti. U posljednih nekoliko godina bionformatika doživljava nagli porast, te se uspjevaju mapirati genomi mnogih živih bića. Između svih dijelova bioinformatike najviše se ističu metode analiziranja genoma te određivanja njihovoh položaja u taksonomskom stablu.
-Upravo u tom polju postoje mnogi alati koji se u mnogočemu razlikuju.
-\\ U tom polju veliki posao su napravili Derrick E. Wood i Steven L. Salzberg sa alatom nazvanim Kraken.\\{\textit{Kraken is ultrafast and high accurate program for assigning taxonomic labels to metagenomic DNA sequences.}\footnote[1]{Wood and Salzberg: \textbf{Kraken: ultrafast metagenomic sequence classification using exact alignments.} \textit{Genome Biology} 2914 15:R46}\\ Kraken je alat za metagenomsku analizu podataka,  koji se ističe svojom brzinom i točnošću. Dotadašnji alati su se mogli podjeliti na brze i točne, te je upravo to bio problem mnogim znanstvenicima. Trebalo je naći neku sredinu te spojiti ta dva uvjeta u jedan alat koji će moći sve to i još mnogo toga. Kraken radi na principu poravnanja k-mera te , slanjem upita u bazu podataka genoma, uspoređivanja te postavljanja genoma u taksonomsku granu. Ta metoda rada daje nevjerovatnu preciznost od preko 90\%. Ta preciznost ovisi mnogo o već spomenutoj bazi podataka genoma, koja je jako velika ( standardna baza je veličine 70ak GB ).
-
+Bioinformatika je interdisciplinarna znanost koja se bavi razvojem programa i metoda za interpretiranje bioloških podataka. Spaja matematiku, statistiku, računalnu znanost te druge prirodno matematičke znanosti. U posljednjem desetljeću bioinformatika kao znanost doživaljava veliki porast, te kao takva uspjeva mapirati genome mnogih živih bića.\\
+U navedenom porastu najviše se ističu metode analiziranja genoma, te, spajanjem statističkih analiza i algoritama iz područja računalne znanosti, metode određivanja položaja istih u taksonomskom stablu. Upravo u tom području postoje mnogi alati koji su razvijeni upravo s ciljem poboljšanja točnosti određivanja taksonomskog stabla novoj, nepoznatoj, jedinki.\\ Za većinu jedinki u uzorku su vrsta, rod i više razine stabla nepoznati. Ako je jedinka potpuno nepoznata tada će se klasificirati kao nova nepoznata vrsta te se neće dalje klasificirati. U velikom broju slučajeva će postojati neke sličnosti sa nekim već određenim vrstama, te je potrebno pronaći te sličnosti kako bi se sjedinka uspješno klasificirala. Za to služe razni algoritmi poravnanja. Jedan od tih je BLAST. Postoje druge metode i programi koji pospješuju učinkovitost BLAST-a uvođenjem metoda strojnog učenja. Iako bolje preciznosti ti programi imaju jednu veliku manu. Vrijeme potrebno za klasificiranje podatka je jako veliko, stoga su više manje neiskoristivi. \\Tu na scenu nastupa alat za klasifikaciju metagenoma nazvan Kraken(Derrick E. Wood i Steven L.).
+\\{\textit{Kraken is ultrafast and high accurate program for assigning taxonomic labels to metagenomic DNA sequences.}\footnote[1]{Wood and Salzberg: \textbf{Kraken: ultrafast metagenomic sequence classification using exact alignments.} \textit{Genome Biology} 2914 15:R46}
+\\Za razliku od alata koji su pokušali poboljšati preciznost BLAST algoritma, te time izgubili na brzini, Kraken je jedan od rijetkih alata koji postiže točnost koja premašuje onu u BLAST algoritmu, s time da ne gubi na brzini izvođenja. Rad Krakena se sastoji od toga da se ulazni podatak "razbija" na k-mere, te se minimizer algoritmom traže oni k-meri koji imaju istu vrijednost minimzer-a. Tada se taj podatak uspoređuje s podacima u Kraken-ovoj bazi podataka, s tim da je baza sortirana na način da su podaci sa istim minimizerom smješteni jedan pored drugog, tako da se pretraživanje jako pospješuje i ubrzava. Autori alata su shvatili da Kraken može naići an problem prilikom izvođenja na računalu s ograničenim resursima, točnije na računalu s RAM-om ispod 70GB. Iz tog razloga je razvijena MiniKraken baza podataka koja je sa prvotnih 70GB podataka smanjena na 4GB.
+\begin{table}[htb]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|llcccccc|}
+			\hline
+			\multicolumn{1}{|c}{} & \multicolumn{1}{c}{}  & \multicolumn{2}{c}{HiSeq}                                       & \multicolumn{2}{c}{MiSeq}                                       & \multicolumn{2}{c|}{simBA-5}                                     \\
+			\multicolumn{2}{|l}{Classifier}              & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Sensitivity} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Sensitivity} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l|}{Sensitivity} \\ \hline
+			Megablast             & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.03}    & \multicolumn{1}{c|}{79.00}      & \multicolumn{1}{c|}{92.44}    & \multicolumn{1}{c|}{75.76}      & \multicolumn{1}{c|}{96.93}    & 93.67                            \\ \hline
+			NBC                   & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{82.33}    & \multicolumn{1}{c|}{82.33}      & \multicolumn{1}{c|}{77.78}    & \multicolumn{1}{c|}{77.78}      & \multicolumn{1}{c|}{97.64}    & 97.64                            \\ \hline
+			PhymmBL               & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{79.14}    & \multicolumn{1}{c|}{79.14}      & \multicolumn{1}{c|}{76.21}    & \multicolumn{1}{c|}{76.21}      & \multicolumn{1}{c|}{96.11}    & 96.11                            \\ \hline
+			PhymmBL65             & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.13}    & \multicolumn{1}{c|}{73.95}      & \multicolumn{1}{c|}{92.47}    & \multicolumn{1}{c|}{73.03}      & \multicolumn{1}{c|}{99.08}    & 95.45                            \\ \hline
+			Kraken                & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.20}    & \multicolumn{1}{c|}{77.15}      & \multicolumn{1}{c|}{94.71}    & \multicolumn{1}{c|}{73.46}      & \multicolumn{1}{c|}{99.90}    & 91.25                            \\ \hline
+			Kraken-Q              & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.12}    & \multicolumn{1}{c|}{76.31}      & \multicolumn{1}{c|}{94.69}    & \multicolumn{1}{c|}{70.41}      & \multicolumn{1}{c|}{99.92}    & 89.54                            \\ \hline
+			MiniKraken            & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.44}    & \multicolumn{1}{c|}{66.12}      & \multicolumn{1}{c|}{97.41}    & \multicolumn{1}{c|}{67.95}      & \multicolumn{1}{c|}{99.95}    & 65.87                            \\ \hline
+			MiniKraken-Q          & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.36}    & \multicolumn{1}{c|}{65.67}      & \multicolumn{1}{c|}{97.32}    & \multicolumn{1}{c|}{65.84}      & \multicolumn{1}{c|}{99.98}    & 65.31                            \\ \hline
+			Kraken-GB             & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.51}    & \multicolumn{1}{c|}{93.75}      & \multicolumn{1}{c|}{98.48}    & \multicolumn{1}{c|}{86.23}      & \multicolumn{1}{c|}{99.48}    & 91.13                            \\ \hline
+		\end{tabular}%
+	}
+	\caption{Klasifikacija roda za tri metagenoma}
+	\label{StatRez}
+\end{table}
 
 
 \chapter{Definiranje problema}
-Kraken radi na principu razbijanja ulaznog podatka na preklapajuće k-mere.
-\\K-meri se nazivaju svi mogući podnizova ulaznog niza. U bioinformatici se k-merama nazivaju svi mogući podnizovi baza aminokiselina u nekom uzorku genoma.
-\\Svaki k-mer se tada mapira prema algoritmu LCA(\textit{Lower common ancestor}) prema genomima koji su spremljeni u bazi podataka.
+Uz već spomenutost rješenja problema korištenja velike količine resursa, nailazi se na problem koji će se pokušati riješiti tijekom ovog rada.
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[hbp]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|llcccccc|}
+			\hline
+			\multicolumn{1}{|c}{} & \multicolumn{1}{c}{} & \multicolumn{2}{c}{HiSeq} & \multicolumn{2}{c}{MiSeq} & \multicolumn{2}{c|}{simBA-5} \\
+			\multicolumn{2}{|l}{Classifier} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Sensitivity} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Sensitivity} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l|}{Sensitivity} \\ \hline
+			Kraken & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.20} & \multicolumn{1}{c|}{77.15} & \multicolumn{1}{c|}{94.71} & \multicolumn{1}{c|}{73.46} & \multicolumn{1}{c|}{99.90} & 91.25 \\ \hline
+			MiniKraken & \multicolumn{1}{l|}{} & \multicolumn{1}{c|}{99.44} & \multicolumn{1}{c|}{66.12} & \multicolumn{1}{c|}{97.41} & \multicolumn{1}{c|}{67.95} & \multicolumn{1}{c|}{99.95} & 65.87 \\ \hline
+		\end{tabular}%
+	}
+	\caption{Isječak iz Tablice 1.1}
+	\label{IsjecakTablice}
+\end{table}
 
-
-
-Radi brzine izvođenja ta baza se učitava u RAM računala. Standardna baza podataka koju koristi Kraken veličine 70ak GB , te to predstavlja problem na računalima ograničenih resursa. Kao jedno rješenje tog problema može se generirati vlastita baza, ili koristiti baza podataka nazvana MiniKraken. Iako znatno manja, te time omogućava korištenje spomenutog alata, to rješenje uvelike utječe na kvalitetu očitanja.
-
-%TODO Upisati tablicu odnosa Kraken i MiniKraken baze podataka
-
-Iako se iz dane tablice vidi da se preciznost korištenjem MiniKraken baze povećala u odnosu na Kraken bazu podataka. S druge strane senzitivnost jako opada, što nam predstavlja veći problem.\\Ideja ovog rada je da se algoritmima sličnim algoritmima straničenja osposobi svako računalo na rad sa standardnom bazom podataka. Algoritam radi na način da je ulazna baza podataka razdijeli na manje jedinice proizvoljne veličine, te se indeksiranjem istih stvori lista indexa koja će se lako moći pretraživati, te tako učitavati samo ona jedinica koja se po k-merima slaže sa našim ulaznim podatkom. Iako se ovaj radi odnosi isključivo na Kraken, izgradit će se pseudokod koji će se moć implementirati u ovisnosti kako izgleda naša baza podataka.
+Iako se iz dane tablice vidi da se preciznost korištenjem MiniKraken baze podataka neznatno povećala u odnosu na Kraken bazu podataka. S druge strane osjetljivost jako opada. Osjetljivost predstavlja mjeru koja određuje postotak uočenih lažno negativnig podataka, tj. predstavlja postotak točno kvalificiranih podataka koji su uistinu tako i predstavljeni. S druge strane precizonst predstavlja izbjegavanje lažno pozitivnih podataka, tj. koliko podataka je uočeno da ne pripadaju nekoj skupini, s tim da oni uistinu ne pripadaju toj skupini.\\Ideja ovog rada je da se algoritmima sličnim algoritmima straničenja osposobi računalo s ograničenim resursima za rad s bazom podataka čija veličina uvelike nadilazi količinu RAM-a raspoloživog na računalu. Prvotno je potrebno podjeliti bazu podataka na više manjih koje će se moći uspješno učitati u memoriju te pretražiti. Ideja je iskoristiti "kontejnere" k-mera koji su određeni svaki jedinstvenom minimizer vrijednosti, te pomoću binarnog pretraživanja indeksa učitavati samo onu bazu podataka pomoću koje je moguće klasificirati podatak u taksonomsko stablo. Želeći se približit straničenju, predstavit će se samo iteriranje po indeksima te učitavati slijedno baze podataka i pretraživati svaku.
 \chapter{Strukture podataka i algoritmi u Kraken-u}
-\subsection{Struktura baze podataka}
-Baza podataka koju koristi Kraken se iz podataka (genoma) povučenih sa NCBI-ove službene stranice. Budući da Kraken radi na principu uspoređivanja k-mera baza podataka se također sastoji od podataka raspoređenim po k-merima. Nakon povlačenja podataka sa NCBI-a koristi se Jellyfish za raspoređivanje k-mera. Kraken zadano koristi 31-mere, tj za svaki podataka traži sve moguće podskupove do 31 element, u ovom slučaju se to odnosi na jednu nukleotidnu bazu. Za indeksiranje i raspoređivanje podataka koristi se koncept minimizera, kojega su razvili Roberts M, Hayes W, Hunt B, Mount s, te Yorke J. Prilikom sortiranja i indeksiranja se stvaraju svojevrsni kontejneri koji sadržavaju one podatke ciji k-meri imaju iste minimizer-e, tako da prilikom klasificiranja podatka se binarno pretražuje samo određeni kontejner.\\ Tu dolazimo do ideje rješenja našeg problema. Iskorištavanjem već danih indeksa i kontejnera će se svaki kontejner pretvoriti u posebnu bazu podataka te će se ista sama učitavati u RAM. Stvoritelji Krakena su uzeli u obzir i da je moguć slučaj da veliki broj k-mera ima isti minimizer, te su to riješili tako što se nad svakim kontejnerom izvrši XOR operacija koja odbaci pola bitova te tako su uspjelu približno dobiti normalnu distribuciju podataka. To rješenje će pomoći i u našem problemu, tako da nećemo morati paziti na to da svaki kontejner bude približne veličine te da veličina jednog ne bude prevelika za naš RAM.
+\subsection{Baza podataka}
+\subsubsection{Kreiranje baze podataka}
 
-%TODO ubaciti pseudokod indeksiranja te kreiranja kontejnera
-%TODO Unijeti tablicu izgleda strukture baze podataka
+Nastanak baze podataka se događa u nekoliko koraka. Za početak se sa NCBI-a preuzimaju biblioteke koje sadrže trenutno poznate vrste. Budući da pretraživanje baze podataka u Kraken-u osniva na k-merima potrebno je proizvesti k-mere za svaki podataka u bazi podataka. Za to služi alat naziva Jellyfish(Guillaume Marçais i Carl Kingsford) koji računa k-mere zadane duljine 31 ( korisnik također može zadati duljinu k-mera).\\Jellyfish je alat za brzo i memorijski povoljno prebrojavanje podnizova u danom nizu. Za potrebe prilagodbe svim resursima za Jellyfish postoje opcije za brzo izračunavanje koje je memorijski zahtjevnije, te ono sporije ali memorijski ne toliko zahtjevno. U kontekstu bioinformatike Jellyfish se koristi za prebrojavanje k-mera u zadanom metagenomu. Sam rad se bazira na hash tablici koja je osposobljena za paralelan rad preko više CPU-a. Hash tablica se sastoji od para (ključ,vrijednost), gdje je ključ zadani k-mer a vrijednost je broj njegovog ponavljanja u metagenomu.
+	 	
+\begin{table}[hbp]
+	\centering
+	\caption{Prikaz niza te njegovih k-mera (k = 4)}
+	\label{Prikaz k-mera}
+	\begin{tabular}{llllllllll}
+		Ulaz:  &           & \multicolumn{8}{l}{AGATCGAGTG}                            \\
+		4-mer: & \multicolumn{2}{l}{} & AGAT & GATC & ATCG & TCGA & CGAG & GAGT & AGTG
+	\end{tabular}
+\end{table}
+Nakon rada Jellyfish-a u bazu se spremaju 4 bajtne vrijednosti k-mera te se kreira identifikacijska oznaka za svaki podataka. Tada program kreiranja baze podataka ponovno prolazi kroz istu, te za svaki identifikator podatka izračunava njegov LCA(\textit{Najmanji zajednički predal}), te ga sprema u bazu podataka zajedno s identifikatorom i njegovim k-merima.
+\subsubsection{Strukture baze podataka}
+Gore navedeni proces klasificiranja ulaznog genoma pomoću baze podataka se , već navedeno, bazira na pretraživanju k-mera. Baza podataka se sastaoji od identifikacijskih oznaka svakog podatka u njoj, njihovog izračunatog najmanjeg zajedničkog pretka, te k-mera koje on tvori.\\
+\begin{figure}[hbp]
+	\centering
+	\includegraphics[width=\textwidth]{DbStructure.jpg}
+	\caption{Prikaze strukture baze podataka}
+	\label{BazaPodataka}
+\end{figure}
 
+S ciljem poboljšanja brzine pretraživanja, uvodi se algoritam indeksiranja i raspoređivanja poznat pod imenom Minimizer (Roberts M, Hayes W, Hunt B, Mount s, te Yorke J.).
+ 
+
+\begin{algorithm}[H]
+	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+	ptr <- pokazivač\_na\_k-mer\;
+	k\_ct <- brojač kontejnera\;
+	vrijednosti <- 1ull << (nt * 2);
+	\While{brojač je različit od broja kontejnera}{
+		brojač++\;
+		dohvati\_k-mer(ptr)\;
+		ključ <- izračunaj\_ključ()\;
+		b\_brojac[ključ]++\;		
+	}
+	b\_ofset\_ofset[vrijednosti +1]\;
+	\For{i < vrijednosti}{
+		b\_ofset = b\_ofset[i-1]+b\_brojac[i-1]\;
+	}
+	indeks(b\_ofset)\;
+	\caption{Računanje indeksa kontejnera}
+\end{algorithm}
+
+Prilikom sortiranja i indeksiranja se stvaraju svojevrsni kontejneri koji sadržavaju one podatke čiji k-meri imaju iste minimizer vrijednosti.Tom idejom se poboljšava pretraživanje na način da se za svaki ulazni podataka računaju njegovi k-meri te njegove minimizer vrijednosti, te se pretragom liste indeksa dohvaća samo onaj kontejner koji sadrži istu minimizer vrijednost.
+
+
+\newpage
 \subsection{Algoritam klasifikacije podataka}
 %TODO unijeti sliku načina klasificiranja podataka
+
+
 Za klasifikaciju ulaznog podatka prvo se određuju i mapiraju svi k-meri samog podatka. Tada se za svaki pojedini k-mer određuje podrijeklo te se, na osnovu LCA(\textit{Lower Common Ancestor}), određuje taksonomsko stablo svakog k-mera. Budući da se radi o jako velikim podacima, te se stvara veliki broj k-mera to taksonomsko stablo vrlo lako može voditi do vrste koja nije nikako povezana s našim podatkom. Zbog toga se za svaki put određuju težine koje tada kompenziraju moguće pogreške. Ako postoji više puteva s istim težinama do listova tada se na njima ponovno radi LCA algoritam.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\textwidth]{Work.jpg}
+	\caption{Prikaza klasifikacije podataka}
+	\label{Klasifikacija}
+\end{figure}
+
+
+\newpage
 \subsection{LCA(\textit{Lower Common Ancestor})}
 %TODO ubacit sliku za LCA
 LCA(\textit{Lower common ancestor}) je jedan od osnovnih algoritamskih problema u strukturama stabala. Prvu ideju i definiciju LCA dali su Alfred Aho, John Hopcroft i Jeffrey Ullman 1973. godine u svom radu \textit{On finding lowest common ancestors in trees}. Problem se odnosi na to da se za dva cvora \textit{x} i \textit{y} nađe najbliži čvor u stablu koji je hijerarhijom viši, te je zajedniči oba čvora. Ovaj problem je važan ne samo zbog svoje složenosti i razumjevanja strukture stabala, nego i zbog svoje primjene. Jedna od primjena je u bioinformatici za određivanje zajedničkog pretka dvije različite vrste. Upravo Kraken koristi LCA kao metodu određivanja navedenog iz k-mera podataka.
