@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  8 JUN 2017 14:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  8 JUN 2017 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,23 +615,26 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count115
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
+) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen151
 ) (./zavrsni.aux)
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 7.
- (/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 8.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -671,13 +674,13 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count116
-\scratchdimen=\dimen151
+\scratchdimen=\dimen152
 \scratchbox=\box37
 \nofMPsegments=\count117
 \nofMParguments=\count118
 \everyMPshowfont=\toks25
 \MPscratchCnt=\count119
-\MPscratchDim=\dimen152
+\MPscratchDim=\dimen153
 \MPnumerator=\count120
 \makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks26
@@ -727,32 +730,32 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 18.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 19.
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 21.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 22.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -769,9 +772,9 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 ]
 Poglavlje 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 32.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
 [1
 
 ] [2]
@@ -788,7 +791,7 @@ c file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbS
-tructure.jpg used on input line 96.
+tructure.jpg used on input line 97.
 (pdftex.def)             Requested size: 412.56497pt x 309.5625pt.
 
 [4
@@ -802,11 +805,11 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg Graphic file
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/Wor
-k.jpg used on input line 133.
+k.jpg used on input line 134.
 (pdftex.def)             Requested size: 412.56497pt x 309.42168pt.
  [7 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 141.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 142.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=46, 803.0pt x 6
 02.25pt>
@@ -814,25 +817,25 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg Graphic file (
 type jpg)
  <use /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca
-.jpg used on input line 145.
+.jpg used on input line 146.
 (pdftex.def)             Requested size: 412.56497pt x 309.43164pt.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 154.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 158.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--163
+Underfull \hbox (badness 10000) in paragraph at lines 151--167
 
  []
 
 [8 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--182
+Underfull \hbox (badness 10000) in paragraph at lines 168--187
 
  []
 
@@ -841,37 +844,42 @@ Poglavlje 4.
 [10
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 216--237
+
+ []
+
+[11] [12]
 Poglavlje 5.
-[11
+[13
 
 ]
 Poglavlje 6.
-[12
+[14
 
 ]
 Poglavlje 7.
-(./zavrsni.bbl [13
+(./zavrsni.bbl [15
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [14
+) [16
 
-] [15] (./zavrsni.aux) )
+] [17] (./zavrsni.aux) )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 31 ({)
+### simple group (level 2) entered at line 32 ({)
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6914 strings out of 493014
- 96939 string characters out of 6122320
- 195020 words of memory out of 5000000
- 10284 multiletter control sequences out of 15000+600000
+ 6928 strings out of 493014
+ 97215 string characters out of 6122320
+ 195265 words of memory out of 5000000
+ 10294 multiletter control sequences out of 15000+600000
  77270 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,14n,40p,1433b,2246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,15n,40p,1303b,2264s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
 ts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helveti
@@ -880,10 +888,10 @@ hare/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (19 pages, 299299 bytes).
+Output written on zavrsni.pdf (21 pages, 302730 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

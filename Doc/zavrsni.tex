@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage[]{algorithm2e}
 \usepackage{caption}
+\usepackage{multirow}
 \graphicspath{{/home/mateo/Git/Kraken_memory_improvement/Pictures/}}
 \begin{document}
 
@@ -151,8 +152,11 @@ Na slici 3.3 se nalazi prikaz strukture stabla te su bojama označeni listovi za
 \newline
 \newline
 \begin{algorithm}[H]
-	procedure getancestor(u,i):\footnote[1]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}\;
+	
 	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+	
+	procedure getancestor(u,i)\footnote[1]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}:\\
+
 	
 		\If{ancestor(u,i-1) = undefined then;}{
 			ancestor(u,i) <- getancestor(getancestor(u,i-1),i-1)\;
@@ -165,8 +169,9 @@ Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te 
 \newline
 \newline
 \begin{algorithm}[H]
-	procedure find(u,v,i,d)\footnote[2]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}\;
+
 	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+		procedure find(u,v,i,d)\footnote[2]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}:\\
 		\eIf{i = 0}{
 			resultis ancestor(u,0)\;
 		}{
@@ -185,15 +190,58 @@ Algoritam 3 predstavlja metodu koja pronalazi najmanjeg zajedničkog pretka za u
 
 \chapter{Algoritmi indeksiranja i pretrage}
 \subsection{Minimizer - algoritam za reduciranje podataka}
+Usporedba podataka je osnova moderne bioinformatike. Ona se danas temelji na metodi \textit{seed-and-extend}. Za svaki ulazni podatak se uzima samo jedan uzorak, te se on uspoređuje u bazi podataka. Ako se nađe poklapanje tada se taj uzorak proširuje na cijeli podatak te se ponovno uspoređuje. Da bi sve to funkcioniralo potrebno je uzeti uzorak za svaki podskup u jednom genomu, što , za kompleksnije genome, zauzima jako puno memorije.Na ideju rješenja su došli Michael Roberts, Wayne Hayes, Brian R. Hunt, Stephen M. Mount i James A. York u svom radu \textit{Reducing storage requirements for biological sequence comparison}. Koristi se isti način rada, tj.\textit{seed-and-extend}, uz razliku da se ne uzimaju svi uzorci, nego samo mali podskup jedinstvenih, nazvanih "minimizer-i".
+\\ Navedeni algoritam sažimanja se koristi i u Kraken bazi podataka, te ju uvelike smanjuje i pospješuje brzinu izvođenja. Prilikom kreiranja MiniKraken baze podataka se koristi isti način rada, uz razliku da se odbacuje samo određeni postotak prvih i zadnjih vrijednosti. Da bi kontejneri u kojima su sadržani podaci s istim minimizer vrijednostima zadržao svojstvo kolekcije, potrebno je da su ti isti podaci normalno distribuirani, što se postiže brisanjem pola bitova prilikom ispitivanja jednakosti. S ciljem pospješenja brzine izvođenja, jer svako računanje minimizer vrijednosti je relativno skupo, prilikom klasifikacije podatka koristi se onaj kontejner koji je korišten prije, te ako k-meri nisu nađeni u njemu, računa se minimizer vrijednost. Ako je minimizer vrijednost jednaka kao u kontjerneru zaključuje se da se podatak ne može klasificirati, inače se pozicionira u dani kontejner te se ponovno vrši pretraga.
 
+Postije dvije vrste minimizer-vrijednosti: unutarnje i vanjske. Svakoj od njih je srž računanja isti, tj. za ulazni niz se računaju svi njegovi k-meri za zadani k, te se iz njih tada bira onaj k-mer koji je leksikografski najmanji. 
 
+\begin{figure}[htbp]
+	\centering
+	
+	\begin{tabular}{l|l|llllllll|}
+		\multicolumn{2}{l|}{Pozicija:}                                                                                       &  & 1 & 2 & 3 & 4          & 5          & 6          & 7 \\ \hline
+		\multicolumn{2}{l|}{Ulazni niz:}                                                                                     &  & 2 & 3 & 1 & 0          & 3          & 4          & 3 \\ \hline
+		\multicolumn{2}{l|}{\multirow{5}{*}{\begin{tabular}[c]{@{}l@{}}k-meri\\ s\\ podebljanim\\ minimizerom\end{tabular}}} &  & 2 & 3 & 1 &            &            &            &   \\
+		\multicolumn{2}{l|}{}                                                                                                &  &   & 3 & 1 & 0          &            &            &   \\
+		\multicolumn{2}{l|}{}                                                                                                &  &   &   & 1 & 0          & 3          &            &   \\
+		\multicolumn{2}{l|}{}                                                                                                &  &   &   &   & \textbf{0} & \textbf{3} & \textbf{4} &   \\
+		\multicolumn{2}{l|}{}                                                                                                &  &   &   &   &            & 3          & 4          & 3 \\ \hline
+	\end{tabular}
+	\caption{K-meri ulaznog niza s minimizer-om}
+	\label{Minimizer}
+\end{figure}
 
-S obzirom na veličinu podataka koji se koriste u metagenomici nailazilo se na problem spremanja istih u RAM. Na ideju rješenja su došli Michael Roberts, Wayne Hayes, Brian R. Hunt, Stephen M. Mount i James A. York u svom radu \textit{Reducing storage requirements for biological sequence comparison}. Način rada se bazira na tome da se radi \textit{seed-and-extend}. Od ulaznog niz se uzimaju određeni dijelovi koji karakteriziraju dani niz, te se poravnava sa karakterističnim podnizovima drugog niza. Kada se uspiju poravnat string se proširuje i traže se druga poravnanja. Ovo uvelika smanjuje bazu podataka koju Kraken koristi, zbog toga što se u kontejnerima koje sadrže podatke istih k-mera nalaze samo vrijednosti podnizova koje se poslije dinamično proširuju.\\Nakon poravnanja i sažimanja podataka oni moraju zadovoljavaju kriterij kolekcije, tj moraju koliko toliko zadovoljavati normalnu razdiobu u kontejnere. Stoga je potrebno osposobit taj način rada tako da dva slična niza biraju svoje k-mere na način da će se lako naći poravnanje , te  s tim uspjeti usporediti pravilno. \\Minimizer algoritam radi tako da se niz sortira leksikografski te se iz toga biraju minimizer vrijednosti. Prvo se izvedu sve moguće k-mere, te se niz poreda leksikografski, tada se od danih k-mera odabiru one najmanje. Ako postoji više najmanjih k-mera, tada su sve one minimizer vrijednosti.
-%TODO ubaciti sliku određivana minimizer vrijednosti.
-
-
+Slika 4.1 prikazuje način odabira minimizera za ulazni niz. Ulazni niz je podjeljen na 3-mere , a za računanje minimizer-a se koristi prozor od 5 k-mera. Korištenje prozora znači da se samo u 5 k-mera odjednom traži minimizer vrijednost. Budući da je \textit{034} leksikografksi najmanji podniz on se uzima kao zadani minimizer. Algoritam minimizer nam garantira da će dva niza koja su ista sadržavati barem jednu istu minimizer vrijednost.
 \subsection{Binarno pretraživanje}
+Za pretraživanje svakog kontejnera se koristi binarno pretraživanje. Binarno pretraživanje je jedan od osnovnih algoritama u računalnoj znanosti. Glavni zadatak algoritma je pronalazak vrijednosti u sortiranom nizu. Osnovna i glavna pretpostavka jest da je niz sortiran, u suprotnom sam algoritam nema smisla.
+\newline
+\newline
+\begin{algorithm}[H]
+	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+	binarno\_pretraživanje(niz,cilj):\\
+	lo = 1, hi = size(niz)\;
+	\While{lo <= hi}{
+		mid = lo + (hi - lo) / 2\;
+		\eIf{niz[mid] == cilj}{
+			return mid\;
+		}{
+			\eIf{niz[mid] < cilj}{
+				lo = mid + 1\;	
+			}{
+				hi = mid + 1\;
+			}
+		}
+	}
+	\caption{Binarno pretraživanje}
+	\label{BinarnoP}
+\end{algorithm}
+
+Inicijalno je radni prostor binarnog pretraživanja cijeli ulazni niz. Tada se pozicionira na sredinu tog niza, te se ispituje je li vrijednost na sredini jednaka onoj koju mi tražimo. Ako je rezultat potvrdan izlazimo iz petlje te vraćamo poziciju te vrijednosti. U protivnom se ispituje odnos tražene vrijednosti i one koja je na sredini. Ako je vrijednost na sredini manja od tražene radni prostor postavljamo na onu polovicu koja se nalazi desno od indeksa, tj. prelazimo u  polovicu koja sadrži veće vrijednosti, u suprotnom se pozicioniramo na manju polovicu. Složenost binarnog pretraživanja je O(logN). Logaritam je sporo rastuća funkcija, stoga je binarno pretraživanje jako efikasan algoritam. Kao primjer za pretragu imenika od milion imena, pomoću binarnog pretraživanja bismo pronašli traženu vrijednost u najviše 21 korak.
+
+
 \chapter{Pseudokod i razrada algoritma}
+
+
 \chapter{Analiza učinkovitosti rješenja}
 \chapter{Zaključak}
 Zaključak.
