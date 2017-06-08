@@ -151,7 +151,7 @@ Na slici 3.3 se nalazi prikaz strukture stabla te su bojama označeni listovi za
 \newline
 \newline
 \begin{algorithm}[H]
-	procedure getancestor(u,i):\footnote[1]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}\;
+	procedure getancestor(u,i):
 	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
 	
 		\If{ancestor(u,i-1) = undefined then;}{
@@ -165,7 +165,7 @@ Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te 
 \newline
 \newline
 \begin{algorithm}[H]
-	procedure find(u,v,i,d)\footnote[2]{A.V.Aho, J.E.Hopcroft, J.D.Ullman, \textbf{On finding lowest common ancestor in trees} \textit{ACM New York, NY, USA ©1973}}\;
+	procedure find(u,v,i,d)\
 	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
 		\eIf{i = 0}{
 			resultis ancestor(u,0)\;
@@ -178,16 +178,9 @@ Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te 
 		}
 	\caption{Pronalazak LCA}
 	\label{LCA algorithm 2}
-	
 \end{algorithm}
-
-Algoritam 3 predstavlja metodu koja pronalazi najmanjeg zajedničkog pretka za ulazne podatke \textit{u} i \textit{v} koji su na dubini \textit{d}. Početne pretpostavke su da je \textit{d} > 2 \^(i-1) te su im 2\^i-ti preci jednaki ili ne postoje.
-
 \chapter{Algoritmi indeksiranja i pretrage}
 \subsection{Minimizer - algoritam za reduciranje podataka}
-
-
-
 S obzirom na veličinu podataka koji se koriste u metagenomici nailazilo se na problem spremanja istih u RAM. Na ideju rješenja su došli Michael Roberts, Wayne Hayes, Brian R. Hunt, Stephen M. Mount i James A. York u svom radu \textit{Reducing storage requirements for biological sequence comparison}. Način rada se bazira na tome da se radi \textit{seed-and-extend}. Od ulaznog niz se uzimaju određeni dijelovi koji karakteriziraju dani niz, te se poravnava sa karakterističnim podnizovima drugog niza. Kada se uspiju poravnat string se proširuje i traže se druga poravnanja. Ovo uvelika smanjuje bazu podataka koju Kraken koristi, zbog toga što se u kontejnerima koje sadrže podatke istih k-mera nalaze samo vrijednosti podnizova koje se poslije dinamično proširuju.\\Nakon poravnanja i sažimanja podataka oni moraju zadovoljavaju kriterij kolekcije, tj moraju koliko toliko zadovoljavati normalnu razdiobu u kontejnere. Stoga je potrebno osposobit taj način rada tako da dva slična niza biraju svoje k-mere na način da će se lako naći poravnanje , te  s tim uspjeti usporediti pravilno. \\Minimizer algoritam radi tako da se niz sortira leksikografski te se iz toga biraju minimizer vrijednosti. Prvo se izvedu sve moguće k-mere, te se niz poreda leksikografski, tada se od danih k-mera odabiru one najmanje. Ako postoji više najmanjih k-mera, tada su sve one minimizer vrijednosti.
 %TODO ubaciti sliku određivana minimizer vrijednosti.
 
