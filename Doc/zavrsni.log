@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  9 JUN 2017 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  9 JUN 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -543,6 +543,12 @@ LaTeX Info: Redefining \cite on input line 694.
 )
 \listindentation=\dimen131
 )
+(/usr/share/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count108
+\c@@ppsavesec=\count109
+\c@@ppsaveapp=\count110
+)
 (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \heavyrulewidth=\dimen132
@@ -555,17 +561,17 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \cmidrulesep=\dimen139
 \cmidrulekern=\dimen140
 \defaultaddspace=\dimen141
-\@cmidla=\count108
-\@cmidlb=\count109
+\@cmidla=\count111
+\@cmidlb=\count112
 \@aboverulesep=\dimen142
 \@belowrulesep=\dimen143
-\@thisruleclass=\count110
-\@lastruleclass=\count111
+\@thisruleclass=\count113
+\@lastruleclass=\count114
 \@thisrulewidth=\dimen144
 )
 (/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count112
+\c@AlgoLine=\count115
 \algocf@hangindent=\skip49
 
 (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
@@ -610,32 +616,32 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algoheightrule=\skip64
 \algotitleheightruledefault=\skip65
 \algotitleheightrule=\skip66
-\c@algocfline=\count113
-\c@algocfproc=\count114
-\c@algocf=\count115
+\c@algocfline=\count116
+\c@algocfproc=\count117
+\c@algocf=\count118
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
 ) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen151
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count116
+\lst@mode=\count119
 \lst@gtempboxa=\box37
 \lst@token=\toks25
-\lst@length=\count117
+\lst@length=\count120
 \lst@currlwidth=\dimen152
-\lst@column=\count118
-\lst@pos=\count119
+\lst@column=\count121
+\lst@pos=\count122
 \lst@lostspace=\dimen153
 \lst@width=\dimen154
-\lst@newlines=\count120
-\lst@lineno=\count121
+\lst@newlines=\count123
+\lst@lineno=\count124
 \lst@maxwidth=\dimen155
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count122
-\lst@skipnumbers=\count123
+\c@lstnumber=\count125
+\lst@skipnumbers=\count126
 \lst@framebox=\box38
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -830,26 +836,26 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) (./zavrsni.aux)
 \openout1 = `zavrsni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 57.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -890,16 +896,16 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
+\scratchcounter=\count127
 \scratchdimen=\dimen156
 \scratchbox=\box39
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count128
+\nofMParguments=\count129
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count127
+\MPscratchCnt=\count130
 \MPscratchDim=\dimen157
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
@@ -948,33 +954,33 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count130
-LaTeX Font Info:    Try loading font information for T1+phv on input line 67.
+\c@lstlisting=\count133
+LaTeX Font Info:    Try loading font information for T1+phv on input line 68.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 67.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 68.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 68.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 67.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 68.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 67.
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 68.
+LaTeX Font Info:    Try loading font information for U+msa on input line 68.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 70.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 71.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -991,9 +997,9 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 ]
 Poglavlje 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 80.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 100.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
 [1
 
 ] [2]
@@ -1012,7 +1018,7 @@ c file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbS
-tructure.jpg used on input line 146.
+tructure.jpg used on input line 147.
 (pdftex.def)             Requested size: 412.56497pt x 309.5625pt.
 
 [5 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
@@ -1024,11 +1030,11 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg Graphic file
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/Wor
-k.jpg used on input line 186.
+k.jpg used on input line 187.
 (pdftex.def)             Requested size: 412.56497pt x 309.42168pt.
  [7 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 194.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 195.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=46, 803.0pt x 6
 02.25pt>
@@ -1036,20 +1042,15 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg Graphic file (
 type jpg)
  <use /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca
-.jpg used on input line 198.
+.jpg used on input line 199.
 (pdftex.def)             Requested size: 412.56497pt x 309.43164pt.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 210.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 211.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 203--219
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--239
+Underfull \hbox (badness 10000) in paragraph at lines 204--220
 
  []
 
@@ -1104,19 +1105,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--14
  20and %
  []
 
+
+Underfull \hbox (badness 1910) in paragraph at lines 46--50
+[]\T1/ptm/m/n/12 T. Oeti-ket, H. Partl, Hyna, i E. Sc-hlegl.  \T1/ptm/m/it/12 T
+he not-so-short in-tro-duc-tion to
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 46--50
+\T1/ptm/m/it/12 La-tex\T1/ptm/m/n/12 .  URL $\T1/pcr/m/n/12 http : / / www . ct
+an . org / tex-[]archive / info / lshort /
+ []
+
 ) [21
 
-] [22] (./zavrsni.aux) )
+] [22]
+Dodatak A.
+[23
+
+] (./zavrsni.aux) )
 (\end occurred inside a group at level 2)
 
-### simple group (level 2) entered at line 80 ({)
+### simple group (level 2) entered at line 81 ({)
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9483 strings out of 493014
- 132210 string characters out of 6122320
- 269913 words of memory out of 5000000
- 12803 multiletter control sequences out of 15000+600000
+ 9581 strings out of 493014
+ 133638 string characters out of 6122320
+ 270309 words of memory out of 5000000
+ 12898 multiletter control sequences out of 15000+600000
  81881 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,16n,67p,1517b,4485s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1130,10 +1147,10 @@ es/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on zavrsni.pdf (26 pages, 507481 bytes).
+Output written on zavrsni.pdf (27 pages, 510194 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

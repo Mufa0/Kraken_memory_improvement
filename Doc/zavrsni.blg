@@ -6,45 +6,46 @@ Database file #1: literatura.bib
 Warning--entry type for "lca1" isn't style-file defined
 --line 46 of file literatura.bib
 Warning--empty year in Bigdatabases
-You've used 7 entries,
+Warning--empty year in oetiket2007lshort
+You've used 8 entries,
             2773 wiz_defined-function locations,
-            639 strings with 6135 characters,
-and the built_in function-call counts, 3352 in all, are:
-= -- 294
-> -- 199
+            643 strings with 6302 characters,
+and the built_in function-call counts, 3797 in all, are:
+= -- 330
+> -- 238
 < -- 5
-+ -- 67
-- -- 60
-* -- 269
-:= -- 513
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 40
-chr.to.int$ -- 7
-cite$ -- 15
-duplicate$ -- 145
-empty$ -- 265
-format.name$ -- 73
-if$ -- 705
++ -- 80
+- -- 72
+* -- 311
+:= -- 585
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 46
+chr.to.int$ -- 8
+cite$ -- 18
+duplicate$ -- 163
+empty$ -- 291
+format.name$ -- 86
+if$ -- 791
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 5
-newline$ -- 43
-num.names$ -- 28
-pop$ -- 83
+newline$ -- 48
+num.names$ -- 32
+pop$ -- 100
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 40
 quote$ -- 0
-skip$ -- 122
+skip$ -- 134
 stack$ -- 0
-substring$ -- 131
-swap$ -- 19
+substring$ -- 133
+swap$ -- 21
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 77
-warning$ -- 1
-while$ -- 26
+type$ -- 88
+warning$ -- 2
+while$ -- 29
 width$ -- 0
-write$ -- 94
-(There were 2 warnings)
+write$ -- 105
+(There were 3 warnings)

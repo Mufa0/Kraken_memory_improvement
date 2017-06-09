@@ -1,4 +1,5 @@
 \documentclass[times, utf8, zavrsni]{fer}
+\usepackage[titletoc]{appendix}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage[]{algorithm2e}
@@ -192,7 +193,7 @@ Iz slike 3.2 se može vidjeti način rada algoritma. Nakon izračuna svih  k-mer
 
 
 \subsection{LCA(\textit{Lower Common Ancestor})}
-LCA(\textit{Lower common ancestor}) je jedan od osnovnih algoritamskih problema u strukturama stabala.A označava pronalazak čvora u stablu koji je najudaljeniji od korijena stabla, te je zajednički čvorovima \textit{u} i \textit{v}. Prvu ideju i definiciju LCA dali su Alfred Aho, John Hopcroft i Jeffrey Ullman 1973. godine u svom radu \textit{On finding lowest common ancestors in trees}. Zbog svoje složenosti te raznolike primjenjivosti ovaj problem je još uvijek aktualan, te se i danas objavljuje mnogo članaka i radova na tu temu.
+LCA(\textit{Lower common ancestor}) je jedan od osnovnih algoritamskih problema u strukturama stabala.A označava pronalazak čvora u stablu koji je najudaljeniji od korijena stabla, te je zajednički čvorovima \textit{u} i \textit{v}. Prvu ideju i definiciju LCA dali su Alfred Aho, John Hopcroft i Jeffrey Ullman 1973. godine u svom radu \textit{On finding lowest common ancestors in trees}. Zbog svoje složenosti te raznolike primjenjivosti ovaj problem je još uvijek aktualan, te se i danas objavljuje mnogo članaka i radova na tu temu. U uvodu svog rada autori navode glavni problem koji LCA pokušava riješiti. Problem se navodi kao primanje informacija o novim osobama u određenim vremenskim intervali, te je pomoći zadanog algoritma potrebno točno odrediti sve veze između svakog novog čvori koji predstavlja danu informaciju,
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=\textwidth]{lca.jpg}
@@ -217,8 +218,8 @@ Na slici 3.3 se nalazi prikaz strukture stabla te su bojama označeni listovi za
 	\caption{Dohvaćanje pretka}
 	\label{LCA algoritam 1}
 \end{algorithm}
-Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te dubinu \textit{i}. Funkcija dohvaća 2\^ i-tog pretka te ga stavlja u niz. \textit{Getancestor} se poziva tijekom traženja najmanjeg zajedničkog pretka
-\newline
+
+Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te dubinu \textit{i}. Funkcija dohvaća 2\^ i-tog pretka te ga stavlja u niz. \textit{Getancestor} se poziva tijekom traženja najmanjeg zajedničkog pretka. Ova metoda predstavlja očuvanje svih informacija o precima za jedan čvor. 
 \newline
 \begin{algorithm}[H]
 
@@ -238,8 +239,7 @@ Algoritam 2 predstavlja metodu getancestor(u,i), koja prima čvor \textit{u} te 
 	
 \end{algorithm}
 
-Algoritam 3 predstavlja metodu koja pronalazi najmanjeg zajedničkog pretka za ulazne podatke \textit{u} i \textit{v} koji su na dubini \textit{d}. Početne pretpostavke su da je \textit{d} > 2 \^(i-1) te su im 2\^i-ti preci jednaki ili ne postoje.
-
+Algoritam 3 predstavlja metodu koja pronalazi najmanjeg zajedničkog pretka za ulazne podatke \textit{u} i \textit{v} koji su na dubini \textit{d}. Početne pretpostavke su da je \textit{d} > 2 \^(i-1) te su im 2\^i-ti preci jednaki ili ne postoje. Zadana metoda radi na način da u svakom novom koraku smanjuje radni prostor koji pretražuje , tako da je put do najmanjeg zajedničkog pretka uvijek u zadanom prostoru. Gore navedene dvije metode omogućuju stvaranje metode koja osigurava pronalazak najmanjeg zajedničkog pretka uz pravilno biranje početnih uvjeta. Budući da se zadnji uvijek računa logaritamskom funkcijom, algoritam je optimiziran tako da se podaci predstavljaju kao binarne znamenke, te se u svakom koraku petlje pomiče za jedan bit dok ne dođe ko kraja.
 \chapter{Algoritmi indeksiranja i pretrage}
 \subsection{Minimizer - algoritam za reduciranje podataka}
 Usporedba podataka je osnova moderne bioinformatike. Ona se danas temelji na metodi \textit{seed-and-extend}. Za svaki ulazni podatak se uzima samo jedan uzorak, te se on uspoređuje u bazi podataka. Ako se nađe poklapanje tada se taj uzorak proširuje na cijeli podatak te se ponovno uspoređuje. Da bi sve to funkcioniralo potrebno je uzeti uzorak za svaki podskup u jednom genomu, što , za kompleksnije genome, zauzima jako puno memorije.Na ideju rješenja su došli Michael Roberts, Wayne Hayes, Brian R. Hunt, Stephen M. Mount i James A. York u svom radu \textit{Reducing storage requirements for biological sequence comparison}. Koristi se isti način rada, tj.\textit{seed-and-extend}, uz razliku da se ne uzimaju svi uzorci, nego samo mali podskup jedinstvenih, nazvanih "minimizer-i".
@@ -391,21 +391,23 @@ static int callback(void *data, int argc, char **argv,char **azColName){
 	\end{lstlisting}
 \end{figure}
 
-S obzirom na vrijeme izvođenja u samom početku se moglo zaključiti da će program raditi sporije, pogotovo na većim bazama koje će se morati učitati u RAM. Međutim cilj ovog rješenja je osposobljavanje na rad, ali i spremnost na nešto sporiji rad. Naravno sve se još da optimizirati raznim algoritmima pretrage te korištenjem indeksa za interpretaciju i dohvaćanje raznih baza podataka. Jedan od glavnih problema ovog pristupa je bio kako uspješno već gotovu bazu podataka raspodjeliti u manje a da podaci ostanu kontinuirani i indeksi na u svim tablicama ostanu očuvani, što je uspješno odrađeno. Iako neobičan, pristup problemu tako da se cijela baza podataka pretvori u niz SQL upita se pokazao kao jako dobar, te će se zasigurno koristiti u mom daljnjem istraživanju i pokušavanju rješenja navedenog problema.
+S obzirom na vrijeme izvođenja u samom početku se moglo zaključiti da će program raditi sporije, pogotovo na većim bazama koje će se morati učitati u RAM. Međutim cilj ovog rješenja je osposobljavanje na rad, ali i spremnost na nešto sporiji rad. Naravno sve se još da optimizirati raznim algoritmima pretrage te korištenjem indeksa za interpretaciju i dohvaćanje raznih baza podataka. Jedan od glavnih problema ovog pristupa je bio kako uspješno već gotovu bazu podataka raspodjeliti u manje a da podaci ostanu kontinuirani i indeksi na u svim tablicama ostanu očuvani, što je uspješno odrađeno. Iako neobičan, pristup problemu tako da se cijela baza podataka pretvori u niz SQL upita se pokazao kao jako dobar, te će se zasigurno koristiti u mom daljnjem istraživanju i pokušavanju rješenja navedenog problema. Budući da je baza podataka jako mala nije se mogao provesti smislen test postrošnje vremena koji će potkrijepiti gore navedenu teoriju.
 \subsection{Za budućnost}
-U budućem radu ću se više osloniti na implementaciju rješenja konkretno na Kraken bazu podataka, koja je do sada predstavljala veliki problem. Pokušat kontaktirati autore samog alata se u dogovoru s njim raditi na rješavanju, po mom mišljenju, jednog jako zanimljivog problema koji može poboljšati Kraken do krajnjih granica.
+U budućem radu ću se više osloniti na implementaciju rješenja konkretno na Kraken bazu podataka, koja je do sada predstavljala veliki problem. Pokušat kontaktirati autore samog alata se u dogovoru s njim raditi na rješavanju, po mom mišljenju, jednog jako zanimljivog problema koji može poboljšati Kraken do krajnjih granica. Budući rad podrazumjeva dolaženje do podataka koji se nalaze u Kraken bazi podataka, te podjela iste baze na manje cjeline. Razlika od dosadašnjeg rada je da se baza podataka neće dijeliti na bilo koje cjeline, nego će jednu novu bazu podataka činiti jedan kontejner jedinstvenog minimizera. Tada u implementaciju nastupa implementiranje straničenja podataka, poboljšanje samog straničenja korištenjem liste indeksa.
 \chapter{Zaključak}
 Bioinformatika kao interdisciplinarna znanost koja spaja više prirodno-matematičkih znanosti otvara vrata za ozbiljnu suradnju znanstvenika s tih područja. Kroz veliki razvitak u zadnjim desetljećima bioinformatika se razvila u znanost koja uspjeva napraviti mnogo toga. U zadnjem desetljeću se uspješno mapirao cijeli genom čovjeka. Upravo zbog svog razvitka jako brzo su se počeli pojavlivati programi koji su mnogo doprinjeli cijeloj toj priči. Jedan od tih je i Kraken. Svojom izrazitom preciznošću se primiče svojevrsnom vrhuncu u točnosti klasifikacije genoma, te svojom brzinom izvođenja se odmiče od većine drugih alata. Uspješno spaja nekoliko algoritama za indeksiranje, pretragu te klasifikaciju podataka pomoću stabla. Za klasificiranje podataka se koristi LCA algoritam, te za indeksiranje i pretragu baze podataka Minimizer algoritam. Upravo kod baze podataka nastupa problem kojim se bavi ovaj rad. Kako bazu od nekoliko desatak GB ubaciti u RAM koji je samo nekoliko GB. Idejom raspodjele baze podataka te stranišenjem tih baza se pokušalo približiti rješenju, te se ovim radom to i uspjelo. Rana testiranja, koja naposlijetku , zbog tehničkih problema, se niju uspjela odviti na Kraken bazi podataka, su pokaza jednu od najbitnijih značajki koja se morala zadržati, a to je kontinuiranost podataka te indeksa istih. U daljnjem radu na ovom problemu pokušat će se sve to implementirati na prvotno namjenjenu bazu podataka, te ispitati ponašanje istog.
 
 \bibliography{literatura}
 \bibliographystyle{fer}
-\cite{Kraken}
-\cite{Bigdatabases}
-\cite{minim}
-\cite{jellyfish}
-\cite{lca1}
-\cite{lca2}
-\cite{lca3}
+\nocite{Kraken}
+\nocite{Bigdatabases}
+\nocite{minim}
+\nocite{jellyfish}
+\nocite{lca1}
+\nocite{lca3}
+\nocite{lca2}
+
+
 \begin{sazetak}
 Straničenje velike baze podataka se odvija u dva koraka. Prvi je raspodjeljivanje baze na manje cjeline(baze podataka manjeg memorijskog kapaciteta). On je ostvaren pomoću bash skripte koja uz sqlite3 naredbe uspjeva napraviti kostur originalne baze te SQL upite za punjenje baze podacima.\\
 Drugi  korak je samo straničenje koje se odvija jednostavnom for petljom koja iterira po svim bazama te traži podatak koji želimo obraditi. Za nastavak i poboljšanje straničenja se može uvesti lista indeksa baza podataka te se jednostavnim pretraživanjem liste može utvrditi samo jedna baza podataka koju trebamo učitati.
@@ -421,5 +423,18 @@ Paging of large-scale database contains two steps. First one is splitting databa
 
 \keywords{paging, database, SQL command, Kraken, metagenom, k-mer, LCA, minimizer}
 \end{abstract}
+
+\begin{appendices}
+	\chapter{Upute za korištenje programske potpore}
+	Upute za korištenje programske potpore:
+	\\Za koristiti programsku podršku potrebno je raditi na nekoj od Linux distribucija, te ista mora sadržavati instalirane sqlite3 i sqlite3-devel pakete
+	\\Za rad sa izvršnim programo preuzeti direktorij koji sadrži sve zadane komponente
+	\\Pozicionirati se u direktorij Database
+	\\Pokrenuti skriptu splitScript.sh sa argumentima imena baze podataka te brojem baza koje želimo napraviti
+	\\Dump.sql i schema.sql će biti spremljeni u trenutni direktorij
+	\\Baze podataka će biti spremljene u direktorij Databases dok će raspodjeljena dump datoteka biti u Splitted direktoriju
+	\\Pokrenuti Makefile
+	\\Pokrenuti izvršni program sa argumentom broja baza koje želimo koristiti
+\end{appendices}
 
 \end{document}

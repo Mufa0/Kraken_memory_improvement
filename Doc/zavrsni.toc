@@ -18,3 +18,4 @@
 \contentsline {subsection}{\numberline {6.0.1}Za budu\IeC {\'c}nost}{19}
 \contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{20}
 \contentsline {chapter}{Literatura}{21}
+\contentsline {chapter}{Dodatak \numberline {A}Upute za kori\IeC {\v s}tenje programske potpore}{23}
