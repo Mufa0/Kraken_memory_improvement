@@ -4,6 +4,54 @@
 \usepackage[]{algorithm2e}
 \usepackage{caption}
 \usepackage{multirow}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,    
+	%   rulecolor=,
+	language=[GNU]C++,
+	basicstyle=\scriptsize,
+	upquote=true,
+	aboveskip={1.5\baselineskip},
+	columns=fixed,
+	showstringspaces=false,
+	extendedchars=false,
+	breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	frame=single,
+	numbers=left,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	identifierstyle=\ttfamily,
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color[rgb]{0.026,0.112,0.095},
+	stringstyle=\color[rgb]{0.627,0.126,0.941},
+	numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+	%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	language=C++,
+	captionpos=b,
+	tabsize=3,
+	frame=lines,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	%  identifierstyle=\color{magenta},
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color{Darkgreen},
+	stringstyle=\color{red}
+}
 \graphicspath{{/home/mateo/Git/Kraken_memory_improvement/Pictures/}}
 \begin{document}
 
@@ -240,27 +288,131 @@ Inicijalno je radni prostor binarnog pretraživanja cijeli ulazni niz. Tada se p
 
 
 \chapter{Pseudokod i razrada algoritma}
+Riješenja navedenog problema o korištenju baze podataka na ograničenim resursima se sastoji iz nekoliko dijelova. Za početak je potrebno podjeliti bazu podataka na manje cjeline, zatim je potrebno ostvariti straničenje na tim cjelinama.
+\subsubsection{Problemi kod korištenja Kraken baze podataka}
 
+Iako je prvotna ideja bila koristiti Kraken bazu podataka, te je algoritam i osmišljen upravo za nju, zbog tehničkih problema se moralo odustati od te ideje. Sama baza podataka je u nepodržanom formatu za bilo koji preglednik baze podataka koji sam uspio naći, a proučavanjem izvornog koda Kraken alata se nije moglo puno zaključiti. Kod je slabo zakomentiran te je veliki problem snaći se u takvom okruženju. Stoga se za daljnji rad koristi jednostavna baza podataka od par stotina kilobayta.
 
+\subsubsection{Podjela baze podataka}
+Iz gore navedenih razloga odlučeno je prezentirati rad algoritma, te samu raspodjelu baze podataka na uzorku baze podataka\footnote{http://www.sqlitetutorial.net/sqlite-sample-database/}.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\textwidth]{sqlite-sample-database-color.jpg}
+	\caption{Prikaz korištene baze podataka}
+	\label{Db}
+\end{figure}
+Baza podataka je sqlite3 tipa, te se u izvornom kodu programa koristi paket sqlite3.\\
+Podjela baze podataka na cjeline je ostvarena bash skriptom, koja na pomoću sqlite3 naredbi iz zadane baze podataka kreira datoteku koja sadrži sql upite koji stvaraju kostur baze podataka, tj. stvara zadani broj identičnih baza podataka kao originalna ali bez ijednog podatka u sebi.\\ Budući da je već gotovu bazu podataka gotovo nemoguće podijeliti na funkcionalne baze, morao se je koristiti pristup gdje se ista pretvara u niz sql upita.
+
+\begin{algorithm}[H]
+	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+		\If{postoji schema.sql}{izbriši schema.sql\;}
+		\If{postoji dump.sql}{izbriši dump.sql\;}
+		sqlite3 imebaze .schenm -> schema.sql\;
+		sqlite3 imebaze .dump -> dump.sql\;
+	\caption{Podjela baze podataka}
+	\label{PodjelaBp}
+\end{algorithm}
+
+Gore navedenim dijelom koda se stvaraju datoteke schema.sql i dump.sql. Schema.sql sadrži SQL upite koji stvaraju strukturu originalne baze podataka, a dump.sql se sastoji od SQL upita koji pune bazu podataka podacima iz originalne baze podataka.
+\\Budući da želimo bazu podataka podjeliti na cjeline potrebno je file dump.sql podjeliti na onoliko fileova koliko želimo da imamo baza podataka. U svrhe demonstracije rješenja dump.sql je podjeljen u 5 cjelina koje su slijedno razdvojene, tj. ne prate nikakvu logiku koja bi možda pospješila pretragu, ili čak imala nekog smisla. \\Za Kraken bazu podataka se može koristiti datoteka koja sadrži indekse svakog kontejnera , te možemo dobiti baze podataka koje sadrže samo one podatke čiji k-meri imaju jednake minimizer vrijednosti. Iza tog problema se krije ne jako zahtjevna logika koju relativno lako možemo realizirati u bash skripti.
+\\Time ne završava cijepanje baze podataka na manje dijelove, naime potrebno je kreirati svaku bazu podataka te unijeti podatke u svaku zasebno. Iz dump.sql datoteke je dobiveno 6 dump.split.000x.sql datoteka , koje će svaka za sebe graditi bazu podataka. Kako smo datoteku podjelili pomoću jednostavne \textit{split} naredbe u bash-u dobivene datoteke nisu pravilno konfigurirane za kreiranje. Stoga je potrebno , ako ne postoji, na početku svake datoteke upisati SQL naredbu  \textit{BEGIN TRANSACTION}, te na kraju iste , opet ako ne postoji, upisati naredbu \textit{COMMIT}. To je izvedeno sljedećim dijelom bash skripte.
+
+\begin{algorithm}[H]
+	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+	\For{svaku datoteku u direktoriju}{
+		\If{"BEGIN TRANSACTION" se ne nalazi na početku datoteke}{
+			dodaj\_BEGIN\_TRANSACTION\_na\_početak\;
+		}
+		\If{"COMMIT" se ne nalazi na kraju datoteke}{
+			dodaj\_COMMIT\_na\_kraj\;
+		}
+	}
+	\caption{Osposobljavanje dump datoteka}
+	\label{PodjelaBp}
+\end{algorithm}
+
+Naposlijetku je potrebno kreirati bazu podataka. To se radi na način da se za svaku dump.split.000x.sql datoteku kreira baza podataka koja sadrži samo kostur originalne baze, te se u nju tada pomoću navedene datoteke ubacuju podaci. Na kraju izvedbe zadanog programa smo dobili 6 baza podataka koje zajedno imaju sve podatke koje je zadržavala originalna baza podataka.
+
+\subsubsection{Straničenje}
+Kako,zbog tehničkih poteškoća, nismo radili sa Kraken ili MiniKraken bazom podataka za prezentaciju algoritma straničenja koristit će se jednostavni SQL upit koji želi dohvatiti sve podatke za neku tablicu. Algoritam straničenja je prvotno bio osmišljen u verziji koja bi bila dosta brža, ali za ovaj rad je obrađeno samo standardno straničenje.
+
+	\begin{algorithm}[H]
+		\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+		\For{ima podataka u listi}{
+			\For{i < broj\_baza\_podataka}{
+				otvori bazu podataka()\;
+				pozovi SQL upit nad bazom podataka()\;
+				zatvori bazu podataka()\;	
+			}
+		}
+		\caption{Algoritam straničenja}
+		\label{Stranicenje}
+	\end{algorithm}
+
+Gore navedeni pseudokod predstavlja algoritam koji je implementiran za potrebe ovoga rada. Poboljšana verzija bi se sastojala od toga da se za ulazni podataka izračuna indeks te se otvori i pretrači samo baza podataka koja može sadržavati zadani indeks. Taj algoritam je predstavljen sljedećim pseudokodom.
+\newline
+	\begin{algorithm}[H]
+		\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+		\For{ima podataka u listi}{
+			izračunaj indeks za ulazni podatak();
+			\eIf{otvorena baza je istog indeksa ko podatak}{
+				pozovi SQL upit nad bazom podataka()\;
+			}{
+				
+				zatvori bazu podataka()\;
+				pozovi SQL upit nad bazom podataka()\;
+				otvori bazu podataka()\;
+			}
+		}
+		\caption{Poboljšani algoritam straničenja}
+		\label{Stranicenje2}
+	\end{algorithm}
+
+Testiranje za zadanu bazu podataka daje obećavajuće rezultate. Svi podaci su ostali sačuvani, te je za tablicu imena \textit{albums}, SQL upitom SELECT * FROM albums rezultat prikazao sve podatke koji se nalaze u originalnoj bazi.
 \chapter{Analiza učinkovitosti rješenja}
+Zbog nemogućnosti korištenja Kraken i MiniKraken baze podataka testovi koje je moguće provesti za zadani algoritam su ograničeni. Prvi provedeni test je izveden naredbom SELECT * FROM playlists te je utvrđeno da si svi podaci ostali sačuvani, te da callback metoda ,koja je zaslužena za ispisivanje svih dobivenih podataka, nema nikakvih problema s njihovom interpretancijom. 
+\newline
+\begin{figure}[hbp]
+	\begin{lstlisting}
+static int callback(void *data, int argc, char **argv,char **azColName){
+	int i;
+	fprintf(stderr, "%s:", (const char*)data);
+	for(i=0; i<argc; i++){
+		printf("%s=%s\n", azColName[i],argv[i] ? argv[i] : "NULL");
+	}
+	printf("\n");
+	return 0;
+}
+	\end{lstlisting}
+\end{figure}
+
+S obzirom na vrijeme izvođenja u samom početku se moglo zaključiti da će program raditi sporije, pogotovo na većim bazama koje će se morati učitati u RAM. Međutim cilj ovog rješenja je osposobljavanje na rad, ali i spremnost na nešto sporiji rad. Naravno sve se još da optimizirati raznim algoritmima pretrage te korištenjem indeksa za interpretaciju i dohvaćanje raznih baza podataka. Jedan od glavnih problema ovog pristupa je bio kako uspješno već gotovu bazu podataka raspodjeliti u manje a da podaci ostanu kontinuirani i indeksi na u svim tablicama ostanu očuvani, što je uspješno odrađeno. Iako neobičan, pristup problemu tako da se cijela baza podataka pretvori u niz SQL upita se pokazao kao jako dobar, te će se zasigurno koristiti u mom daljnjem istraživanju i pokušavanju rješenja navedenog problema.
+\subsection{Za budućnost}
+U budućem radu ću se više osloniti na implementaciju rješenja konkretno na Kraken bazu podataka, koja je do sada predstavljala veliki problem. Pokušat kontaktirati autore samog alata se u dogovoru s njim raditi na rješavanju, po mom mišljenju, jednog jako zanimljivog problema koji može poboljšati Kraken do krajnjih granica.
 \chapter{Zaključak}
-Zaključak.
+Bioinformatika kao interdisciplinarna znanost koja spaja više prirodno-matematičkih znanosti otvara vrata za ozbiljnu suradnju znanstvenika s tih područja. Kroz veliki razvitak u zadnjim desetljećima bioinformatika se razvila u znanost koja uspjeva napraviti mnogo toga. U zadnjem desetljeću se uspješno mapirao cijeli genom čovjeka. Upravo zbog svog razvitka jako brzo su se počeli pojavlivati programi koji su mnogo doprinjeli cijeloj toj priči. Jedan od tih je i Kraken. Svojom izrazitom preciznošću se primiče svojevrsnom vrhuncu u točnosti klasifikacije genoma, te svojom brzinom izvođenja se odmiče od većine drugih alata. Uspješno spaja nekoliko algoritama za indeksiranje, pretragu te klasifikaciju podataka pomoću stabla. Za klasificiranje podataka se koristi LCA algoritam, te za indeksiranje i pretragu baze podataka Minimizer algoritam. Upravo kod baze podataka nastupa problem kojim se bavi ovaj rad. Kako bazu od nekoliko desatak GB ubaciti u RAM koji je samo nekoliko GB. Idejom raspodjele baze podataka te stranišenjem tih baza se pokušalo približiti rješenju, te se ovim radom to i uspjelo. Rana testiranja, koja naposlijetku , zbog tehničkih problema, se niju uspjela odviti na Kraken bazi podataka, su pokaza jednu od najbitnijih značajki koja se morala zadržati, a to je kontinuiranost podataka te indeksa istih. U daljnjem radu na ovom problemu pokušat će se sve to implementirati na prvotno namjenjenu bazu podataka, te ispitati ponašanje istog.
 
 \bibliography{literatura}
 \bibliographystyle{fer}
-
+\bibitem{}
+Wood and Salzberg: \textbf{Kraken: ultrafast metagenomic
+sequence classification using exact alignments.} \textit{Genome Biology}
+2014 15:R46
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+Straničenje velike baze podataka se odvija u dva koraka. Prvi je raspodjeljivanje baze na manje cjeline(baze podataka manjeg memorijskog kapaciteta). On je ostvaren pomoću bash skripte koja uz sqlite3 naredbe uspjeva napraviti kostur originalne baze te SQL upite za punjenje baze podacima.\\
+Drugi  korak je samo straničenje koje se odvija jednostavnom for petljom koja iterira po svim bazama te traži podatak koji želimo obraditi. Za nastavak i poboljšanje straničenja se može uvesti lista indeksa baza podataka te se jednostavnim pretraživanjem liste može utvrditi samo jedna baza podataka koju trebamo učitati.
 
-\kljucnerijeci{Ključne riječi, odvojene zarezima.}
+\kljucnerijeci{straničenje, baza podataka, SQL upit, Kraken, metagenom, k-mer, LCA, minimizer}
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
-\engtitle{Title}
+\engtitle{Algorithm for Paging Large-Scale Genome Database}
 \begin{abstract}
-Abstract.
+Paging of large-scale database contains two steps. First one is splitting database into smaller units(databases that contains less memory). It is done by bash script that using sqlite3 commands manages to create skeleton of original database, and creates SQL commands for filling database with data.
+\\Second step is paging itself that is happening by simple for loop which iterates over all databases and searches data that we want to process. For continuation and improvement of paging one can use index list and by simple search of that list can determine only one database that one needs to load.
 
-\keywords{Keywords.}
+\keywords{paging, database, SQL command, Kraken, metagenom, k-mer, LCA, minimizer}
 \end{abstract}
 
 \end{document}

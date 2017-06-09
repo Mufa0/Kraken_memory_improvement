@@ -40,11 +40,12 @@ int main (int argc, char **argv){
        }else{
           fprintf(stdout, "Operation done successfully\n");
        }
+       sqlite3_close(db);
   }
 
 
 
-  sqlite3_close(db);
+
   return 0;
 }
 void parse_command_line(int argc, char **argv) {
