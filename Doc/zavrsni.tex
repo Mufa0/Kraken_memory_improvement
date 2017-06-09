@@ -101,6 +101,7 @@ U navedenom porastu najviše se ističu metode analiziranja genoma, te, spajanje
 	\label{StatRez}
 \end{table}
 
+Iz tablice 1.1 ,koja predstavlja rezultate izvođenja na 3 seta metagenoma, se može vidjeti kako Kraken prednjači u preciznosti svoje klasifikacije. Iako je osjetljivost nešto manja nego u Megablast-a, program koji radi na implementaciji BLAST algoritma za poravnanje, ta razlike je nezamjetna. Tablica prikazuje i neke druge alate, te Kraken alat sa raznim opcijama i na raznim bazama podataka. Kraken-Q predstavlja izvedbu Krakena sa uključenom opcijom \textit{quick}, koja doprinosi brzini izvođenja. MiniKraken je Kraken program koji se izvodi na MiniKraken bazi podataka. Ona je stvorena iz originalne baze podataka tako da se uklanja svaki k-ti element iz nje.
 
 \chapter{Definiranje problema}
 Uz već spomenutost rješenja problema korištenja velike količine resursa, nailazi se na problem koji će se pokušati riješiti tijekom ovog rada.
@@ -121,12 +122,12 @@ Uz već spomenutost rješenja problema korištenja velike količine resursa, nai
 	\label{IsjecakTablice}
 \end{table}
 
-Iako se iz dane tablice vidi da se preciznost korištenjem MiniKraken baze podataka neznatno povećala u odnosu na Kraken bazu podataka. S druge strane osjetljivost jako opada. Osjetljivost predstavlja mjeru koja određuje postotak uočenih lažno negativnig podataka, tj. predstavlja postotak točno kvalificiranih podataka koji su uistinu tako i predstavljeni. S druge strane precizonst predstavlja izbjegavanje lažno pozitivnih podataka, tj. koliko podataka je uočeno da ne pripadaju nekoj skupini, s tim da oni uistinu ne pripadaju toj skupini.\\Ideja ovog rada je da se algoritmima sličnim algoritmima straničenja osposobi računalo s ograničenim resursima za rad s bazom podataka čija veličina uvelike nadilazi količinu RAM-a raspoloživog na računalu. Prvotno je potrebno podjeliti bazu podataka na više manjih koje će se moći uspješno učitati u memoriju te pretražiti. Ideja je iskoristiti "kontejnere" k-mera koji su određeni svaki jedinstvenom minimizer vrijednosti, te pomoću binarnog pretraživanja indeksa učitavati samo onu bazu podataka pomoću koje je moguće klasificirati podatak u taksonomsko stablo. Želeći se približit straničenju, predstavit će se samo iteriranje po indeksima te učitavati slijedno baze podataka i pretraživati svaku.
+Iako se iz dane tablice vidi da se preciznost korištenjem MiniKraken baze podataka neznatno povećala u odnosu na Kraken bazu podataka. S druge strane osjetljivost jako opada. \\Osjetljivost predstavlja mjeru koja određuje postotak uočenih lažno negativnig podataka, tj. predstavlja postotak točno kvalificiranih podataka koji su uistinu tako i predstavljeni. S druge strane precizonst predstavlja izbjegavanje lažno pozitivnih podataka, tj. koliko podataka je uočeno da ne pripadaju nekoj skupini, s tim da oni uistinu ne pripadaju toj skupini.\\Ideja ovog rada je da se algoritmima sličnim algoritmima straničenja osposobi računalo s ograničenim resursima za rad s bazom podataka čija veličina uvelike nadilazi količinu RAM-a raspoloživog na računalu. Prvotno je potrebno podjeliti bazu podataka na više manjih cjelina koje će se moći uspješno učitati u memoriju te pretražiti. Ideja je iskoristiti "kontejnere" k-mera koji su određeni svaki jedinstvenom minimizer vrijednosti, te pomoću binarnog pretraživanja indeksa učitavati samo onu bazu podataka pomoću koje je moguće klasificirati podatak u taksonomsko stablo. Želeći se približit straničenju, predstavit će se samo iteriranje po indeksima, te će se učitavanje i pretraživanje svake od baze podataka vršiti slijedno.
 \chapter{Strukture podataka i algoritmi u Kraken-u}
 \subsection{Baza podataka}
 \subsubsection{Kreiranje baze podataka}
 
-Nastanak baze podataka se događa u nekoliko koraka. Za početak se sa NCBI-a preuzimaju biblioteke koje sadrže trenutno poznate vrste. Budući da pretraživanje baze podataka u Kraken-u osniva na k-merima potrebno je proizvesti k-mere za svaki podataka u bazi podataka. Za to služi alat naziva Jellyfish(Guillaume Marçais i Carl Kingsford) koji računa k-mere zadane duljine 31 ( korisnik također može zadati duljinu k-mera).\\Jellyfish je alat za brzo i memorijski povoljno prebrojavanje podnizova u danom nizu. Za potrebe prilagodbe svim resursima za Jellyfish postoje opcije za brzo izračunavanje koje je memorijski zahtjevnije, te ono sporije ali memorijski ne toliko zahtjevno. U kontekstu bioinformatike Jellyfish se koristi za prebrojavanje k-mera u zadanom metagenomu. Sam rad se bazira na hash tablici koja je osposobljena za paralelan rad preko više CPU-a. Hash tablica se sastoji od para (ključ,vrijednost), gdje je ključ zadani k-mer a vrijednost je broj njegovog ponavljanja u metagenomu.
+Nastanak baze podataka se odvija u nekoliko koraka. Za početak se sa NCBI-ove stranice preuzimaju biblioteke koje sadrže podatke i genome trenutno poznatih vrsta. Naravno nije potrebno sve podatke, nego se može preuzeti samo jedno carstvo ili samo jedan podskup podataka od kojih će se graditi baza podataka. Budući da pretraživanje baze podataka u Kraken-u osniva na k-merima potrebno je proizvesti k-mere za svaki podataka u bazi podataka. Za to služi alat naziva Jellyfish(Guillaume Marçais i Carl Kingsford) koji računa k-mere zadane duljine 31 ( korisnik također može zadati duljinu k-mera).\\Jellyfish je alat za brzo i memorijski povoljno prebrojavanje podnizova u danom nizu. Za potrebe prilagodbe svim resursima za Jellyfish postoje opcije za brzo izračunavanje koje je memorijski zahtjevnije, te ono sporije ali memorijski ne toliko zahtjevno. U kontekstu bioinformatike Jellyfish se koristi za prebrojavanje k-mera u zadanom metagenomu. Sam rad se bazira na hash tablici koja je osposobljena za paralelan rad preko više CPU-a. Hash tablica se sastoji od para (ključ,vrijednost), gdje je ključ zadani k-mer a vrijednost je broj njegovog ponavljanja u metagenomu.
 	 	
 \begin{table}[hbp]
 	\centering
@@ -147,35 +148,38 @@ Gore navedeni proces klasificiranja ulaznog genoma pomoću baze podataka se , ve
 	\label{BazaPodataka}
 \end{figure}
 
-S ciljem poboljšanja brzine pretraživanja, uvodi se algoritam indeksiranja i raspoređivanja poznat pod imenom Minimizer (Roberts M, Hayes W, Hunt B, Mount s, te Yorke J.).
+S ciljem poboljšanja brzine pretraživanja, uvodi se algoritam indeksiranja i raspoređivanja poznat pod imenom Minimizer (Roberts M, Hayes W, Hunt B, Mount S, i Yorke J.). Računanje indeksa kontejnera je odvije kroz dvije petlje. U prvoj petlji se iterira po broju kontejnera te se za svaki od njih pohvaća njihov jedinstveni k-mer. Na osnovu njega se računa ključ te se popunjava niz brojem podataka koji ulaze u taj indeks. Nakon toga se računa ofset svih podataka te se zbrajaju s onim podacima koji se nalaze u nizu indeksa. Na kraju se iz varijable ofset kreira indeks vanjskom funkcijom.
  
+\begin{figure}
+	\begin{algorithm}[H]
+		\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
+		ptr <- pokazivač\_na\_k-mer\;
+		k\_ct <- brojač kontejnera\;
+		vrijednosti <- 1ull << (nt * 2)\;
+		\While{brojač je različit od broja kontejnera}{
+			brojač++\;
+			dohvati\_k-mer(ptr)\;
+			ključ <- izračunaj\_ključ()\;
+			b\_brojac[ključ]++\;		
+		}
+		b\_ofset[vrijednosti +1]\;
+		\For{i < vrijednosti}{
+			b\_ofset = b\_ofset[i-1]+b\_brojac[i-1]\;
+		}
+		indeks(b\_ofset)\;
+		\caption{Računanje indeksa kontejnera}
+		\label{Indeks}
+	\end{algorithm}
+\end{figure}
 
-\begin{algorithm}[H]
-	\SetAlgorithmName{Algoritam}{algoritam}{List of algoritam}
-	ptr <- pokazivač\_na\_k-mer\;
-	k\_ct <- brojač kontejnera\;
-	vrijednosti <- 1ull << (nt * 2)\;
-	\While{brojač je različit od broja kontejnera}{
-		brojač++\;
-		dohvati\_k-mer(ptr)\;
-		ključ <- izračunaj\_ključ()\;
-		b\_brojac[ključ]++\;		
-	}
-	b\_ofset\_ofset[vrijednosti +1]\;
-	\For{i < vrijednosti}{
-		b\_ofset = b\_ofset[i-1]+b\_brojac[i-1]\;
-	}
-	indeks(b\_ofset)\;
-	\caption{Računanje indeksa kontejnera}
-\end{algorithm}
 
-Prilikom sortiranja i indeksiranja se stvaraju svojevrsni kontejneri koji sadržavaju one podatke čiji k-meri imaju iste minimizer vrijednosti.Tom idejom se poboljšava pretraživanje na način da se za svaki ulazni podataka računaju njegovi k-meri te njegove minimizer vrijednosti, te se pretragom liste indeksa dohvaća samo onaj kontejner koji sadrži istu minimizer vrijednost.
+Prilikom sortiranja i indeksiranja se stvaraju svojevrsni kontejneri u bazu podataka slijedno sadržavaju one podatke čiji k-meri imaju iste minimizer vrijednosti. Podaci u svakom kontejneru su leksikografski poredani kako bi se isti osposobio za daljnje binarno pretraživanje. Stvaranjem zasebnih kontejnera se poboljšava pretraživanje na način da se za svaki ulazni podataka računaju njegovi k-meri te njegove minimizer vrijednosti, te se pretragom liste indeksa dohvaća samo onaj kontejner koji sadrži istu minimizer vrijednost. Prilikom dolaska novog podataka minimizer vrijednost se ne računa odmah, nego se prvo vrši pretraga na kontejneru na kojem smo već pozicionirani. Ako se podatak ne nalazi u zadanom kontejneru, tada se prelazi na računanje minimizer vrijednosti. Ako je minimizer vrijednost ista kao i kod kontejnera tada se podatak svrstava u neklasificirane te sa svaka daljnja klasifikacija zaustavlja, s druge strane pozicionira se na indeks izračunatog kontejnera te vrši pretragu. Način pretrage i podjele baze podataka prikazan je slici 3.1.
 
 
 \newpage
 \subsection{Algoritam klasifikacije podataka}
 
-Klasificiranje ulaznog podatka se odvija na više razina. Za početak se za ulazni genom računaju svi njegovi k-meri ( koje korisnik može postaviti, ili biti zadani). K-mere ulaznog skupa ćemo na dalje označavati sa K(S). Zatim se za svaki k-mer kreiraju njegove LCA vrijednosti, tj. traži se onaj podatak u taksonomskom stablu, koji predstavlja prvog pretka tog k-mera. Od svih k-mera se tada kreira stablo koje predstavlja sve moguće klasifikacije za dani genom, a koje su dobivene upravo navedenim algoritmom. Svaka vrijednost u stablu ima izračunatu vrijednost koja predstavlja koliko k-mera se podudara sa tim podatkom. Ako za neki k-mer ne postoji poznati LCA , tada se on neće ni stavljati u navedeno stablo. Način rada koji uvodi tečine za svaki čvor u stablu omogućuje veliku točnost u radu Krakena-a, tako da ako postoji neki put u stablu koji je pogrešan a težine su jako male, on će se zanemariti. Ako postoje dva puta u stablu koja imaju iste težine tada se samo za te podatke ponovno računa LCA te se pokušava odrediti koji put zapravo predstavlja točnu klasifikaciju.
+Klasificiranje ulaznog podatka se odvija na više razina. Za početak se za ulazni genom računaju svi njegovi k-meri ( koje korisnik može postaviti, ili biti zadani). K-mere ulaznog skupa ćemo na dalje označavati sa K(S). Zatim se za svaki k-mer kreiraju njegove LCA vrijednosti, tj. traži se onaj podatak, u taksonomskom stablu, koji predstavlja prvog pretka tog k-mera. Od svih k-mera se tada kreira stablo koje predstavlja sve moguće klasifikacije za dani genom, a koje su dobivene upravo navedenim algoritmom. Svaka vrijednost u stablu ima izračunatu vrijednost koja predstavlja koliko k-mera se podudara sa tim podatkom. Te vrijednosti se nazivaju težinama čvora stabla. Ako za neki k-mer ne postoji poznati LCA , tada se on neće ni stavljati u navedeno stablo. Način rada koji uvodi težine za svaki čvor u stablu omogućuje veliku točnost u radu Krakena-a, tako da ako postoji neki put u stablu koji je pogrešan a težine su jako male, on će se zanemariti. Ako postoje dva puta u stablu koja imaju iste težine tada se samo za te podatke ponovno računa LCA te se pokušava odrediti koji put zapravo predstavlja točnu klasifikaciju.
 
 \begin{figure}[!htbp]
 	\centering
@@ -184,7 +188,7 @@ Klasificiranje ulaznog podatka se odvija na više razina. Za početak se za ulaz
 	\label{Klasifikacija}
 \end{figure}
 
-Iz slike 3.2 se može vidjeti način rada algoritma. Nakon određivanja k-mera u prvom dijelu slike se pokušavaju one klasificirata na LCA pomoću već izvedene baze podataka. Nakon toga se računaju težine te taj dio je predstavljen u desnom prikazu na slici. Iako postoje dva puta do lista. prihvaća se samo ovaj lijevi jer on ima veće težine, tj. broj k-mera koji se podudaraju s ovim putom je mnogo veći nego na desnom putu.
+Iz slike 3.2 se može vidjeti način rada algoritma. Nakon izračuna svih  k-mera ulaznog podatka, ti isti se pokušavaju klasificirati i izgraditi taksonomsko stablo pomocu vrijednosti najmanjeg zajedničkog pretka (LCA). To se izvodi pomoću predefinirane baze podataka. Upravo opisani dio rada je prikazana na slici 3.2 na u gornjem dijelu slike. Nakon toga se računaju težine za svaki čvor u stablu. Težine prestavljaju broj k-mera koji se podudaraju sa tim istim čvorom. Težine su predstavljene na slici 3.2 u desnom kutu.Ako postoji više različitih puteva koji imaju iste težine, tada se za iste ponovno računa najmanji zajednički predak te se pokušava dokučiti koji je pravi put, tj. koji od čvorova je pravi predak između listova koje smo tražili. Nadalje ako postoji više puteva ali oni nisu istih težina, tada se put do zajedničkog pretka uzima onaj put koji ima najveću težinu, tj. kojem odgovara najviše k-mera. To je prikazano na slici 3.2 u desnom kutu, gdje možemo vidjeti da se od dva različita puta bira onaj lijevi upravo zbog toga jer je njegov zbroj težina veći od desnog. S time se zaključuje da su težine proporcijonalne vjerojatnosti točnosti zadanog puta. 
 
 
 \subsection{LCA(\textit{Lower Common Ancestor})}
@@ -329,7 +333,7 @@ Gore navedenim dijelom koda se stvaraju datoteke schema.sql i dump.sql. Schema.s
 		}
 	}
 	\caption{Osposobljavanje dump datoteka}
-	\label{PodjelaBp}
+	\label{DumpBp}
 \end{algorithm}
 
 Naposlijetku je potrebno kreirati bazu podataka. To se radi na način da se za svaku dump.split.000x.sql datoteku kreira baza podataka koja sadrži samo kostur originalne baze, te se u nju tada pomoću navedene datoteke ubacuju podaci. Na kraju izvedbe zadanog programa smo dobili 6 baza podataka koje zajedno imaju sve podatke koje je zadržavala originalna baza podataka.
@@ -395,10 +399,13 @@ Bioinformatika kao interdisciplinarna znanost koja spaja više prirodno-matemati
 
 \bibliography{literatura}
 \bibliographystyle{fer}
-\bibitem{}
-Wood and Salzberg: \textbf{Kraken: ultrafast metagenomic
-sequence classification using exact alignments.} \textit{Genome Biology}
-2014 15:R46
+\cite{Kraken}
+\cite{Bigdatabases}
+\cite{minim}
+\cite{jellyfish}
+\cite{lca1}
+\cite{lca2}
+\cite{lca3}
 \begin{sazetak}
 Straničenje velike baze podataka se odvija u dva koraka. Prvi je raspodjeljivanje baze na manje cjeline(baze podataka manjeg memorijskog kapaciteta). On je ostvaren pomoću bash skripte koja uz sqlite3 naredbe uspjeva napraviti kostur originalne baze te SQL upite za punjenje baze podacima.\\
 Drugi  korak je samo straničenje koje se odvija jednostavnom for petljom koja iterira po svim bazama te traži podatak koji želimo obraditi. Za nastavak i poboljšanje straničenja se može uvesti lista indeksa baza podataka te se jednostavnim pretraživanjem liste može utvrditi samo jedna baza podataka koju trebamo učitati.

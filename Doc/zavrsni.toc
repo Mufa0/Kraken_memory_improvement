@@ -7,14 +7,14 @@
 \contentsline {subsubsection}{Strukture baze podataka}{5}
 \contentsline {subsection}{\numberline {3.0.2}Algoritam klasifikacije podataka}{7}
 \contentsline {subsection}{\numberline {3.0.3}LCA(\textit {Lower Common Ancestor})}{8}
-\contentsline {chapter}{\numberline {4}Algoritmi indeksiranja i pretrage}{10}
-\contentsline {subsection}{\numberline {4.0.1}Minimizer - algoritam za reduciranje podataka}{10}
-\contentsline {subsection}{\numberline {4.0.2}Binarno pretra\IeC {\v z}ivanje}{11}
-\contentsline {chapter}{\numberline {5}Pseudokod i razrada algoritma}{13}
-\contentsline {subsubsection}{Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{13}
-\contentsline {subsubsection}{Podjela baze podataka}{13}
-\contentsline {subsubsection}{Strani\IeC {\v c}enje}{15}
-\contentsline {chapter}{\numberline {6}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{17}
-\contentsline {subsection}{\numberline {6.0.1}Za budu\IeC {\'c}nost}{18}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{19}
-\contentsline {chapter}{Literatura}{20}
+\contentsline {chapter}{\numberline {4}Algoritmi indeksiranja i pretrage}{11}
+\contentsline {subsection}{\numberline {4.0.1}Minimizer - algoritam za reduciranje podataka}{11}
+\contentsline {subsection}{\numberline {4.0.2}Binarno pretra\IeC {\v z}ivanje}{12}
+\contentsline {chapter}{\numberline {5}Pseudokod i razrada algoritma}{14}
+\contentsline {subsubsection}{Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{14}
+\contentsline {subsubsection}{Podjela baze podataka}{14}
+\contentsline {subsubsection}{Strani\IeC {\v c}enje}{16}
+\contentsline {chapter}{\numberline {6}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{18}
+\contentsline {subsection}{\numberline {6.0.1}Za budu\IeC {\'c}nost}{19}
+\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{20}
+\contentsline {chapter}{Literatura}{21}

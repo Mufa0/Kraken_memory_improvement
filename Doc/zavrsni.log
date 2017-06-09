@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  8 JUN 2017 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  9 JUN 2017 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -827,26 +827,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-) (./zavrsni.aux
-
-LaTeX Warning: Label `PodjelaBp' multiply defined.
-
-
-! Package natbib Error: Bibliography not compatible with author-year citations.
-
-(natbib)                Press <return> to continue in numerical citation style.
-
-
-See the natbib package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 ...mand\NAT@force@numbers{}\NAT@force@numbers
-                                                  
-Check the bibliography entries for non-compliant syntax,
-or select author-year BibTeX style, e.g. plainnat
-
-)
+) (./zavrsni.aux)
 \openout1 = `zavrsni.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -863,7 +844,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
 LaTeX Font Info:    ... okay on input line 56.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 56.
- (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 56.
@@ -1020,20 +1002,20 @@ Poglavlje 2.
 
 ]
 Poglavlje 3.
+[4
 
-</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=32, 610
+]
+</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=35, 610
 .02097pt x 457.71pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg Graphi
 c file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbS
-tructure.jpg used on input line 145.
+tructure.jpg used on input line 146.
 (pdftex.def)             Requested size: 412.56497pt x 309.5625pt.
 
-[4
-
-] [5 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
+[5 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
 [6]
 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg, id=42, 746.01291p
 t x 559.50967pt>
@@ -1042,11 +1024,11 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg Graphic file
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/Wor
-k.jpg used on input line 182.
+k.jpg used on input line 186.
 (pdftex.def)             Requested size: 412.56497pt x 309.42168pt.
  [7 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 190.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 194.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=46, 803.0pt x 6
 02.25pt>
@@ -1054,98 +1036,90 @@ File: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg Graphic file (
 type jpg)
  <use /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca
-.jpg used on input line 194.
+.jpg used on input line 198.
 (pdftex.def)             Requested size: 412.56497pt x 309.43164pt.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 206.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 210.
 
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--215
+Underfull \hbox (badness 10000) in paragraph at lines 203--219
 
  []
 
-[8 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 216--235
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--239
 
  []
 
-[9]
+[8] [9 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>] [10]
 Poglavlje 4.
-[10
+[11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 264--285
+Underfull \hbox (badness 10000) in paragraph at lines 268--289
 
  []
 
-[11] [12]
+[12] [13]
 Poglavlje 5.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-colo
-r.jpg, id=64, 803.0pt x 403.5075pt>
+r.jpg, id=67, 803.0pt x 403.5075pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database
 -color.jpg Graphic file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-
 color.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/sql
-ite-sample-database-color.jpg used on input line 300.
+ite-sample-database-color.jpg used on input line 304.
 (pdftex.def)             Requested size: 412.56497pt x 207.3192pt.
- [13
+ [14
 
-] [14 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-databas
-e-color.jpg>] [15] [16]
+] [15 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-databas
+e-color.jpg>] [16] [17]
 Poglavlje 6.
-[17
+[18
 
-] [18]
+] [19]
 Poglavlje 7.
-(./zavrsni.bbl [19
+(./zavrsni.bbl [20
 
 ]
-
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
-
-)
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.398 \bibitem{}
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 398
-[][]
+Underfull \hbox (badness 2368) in paragraph at lines 9--14
+[]\T1/ptm/m/n/12 Michael A. Ben-der i Brad-ley C. Ku-sz-maul.  \T1/ptm/m/it/12 
+Data Struc-tu-res and Al-go-rit-
  []
 
-[20
 
-] [21] (./zavrsni.aux)
+Underfull \hbox (badness 1377) in paragraph at lines 9--14
+\T1/ptm/m/it/12 hms for Big Da-ta-ba-ses\T1/ptm/m/n/12 .  To-ku-tek.  URL $\T1/
+pcr/m/n/12 https : / / github . com / tpn /
+ []
 
-LaTeX Warning: There were multiply-defined labels.
 
- )
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
+\T1/pcr/m/n/12 pdfs / blob / master / Tokutek % 20-[] % 20Data % 20Structures %
+ 20and %
+ []
+
+) [21
+
+] [22] (./zavrsni.aux) )
 (\end occurred inside a group at level 2)
 
 ### simple group (level 2) entered at line 80 ({)
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9461 strings out of 493014
- 131899 string characters out of 6122320
+ 9483 strings out of 493014
+ 132210 string characters out of 6122320
  269913 words of memory out of 5000000
- 12782 multiletter control sequences out of 15000+600000
- 81260 words of font info for 99 fonts, out of 8000000 for 9000
+ 12803 multiletter control sequences out of 15000+600000
+ 81881 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,16n,67p,1517b,4487s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,16n,67p,1517b,4485s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/c
@@ -1156,10 +1130,10 @@ es/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
 are/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on zavrsni.pdf (25 pages, 499800 bytes).
+Output written on zavrsni.pdf (26 pages, 507481 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

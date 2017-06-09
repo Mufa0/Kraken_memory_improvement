@@ -1,8 +1,50 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[A.~Bender i C.~Kuszmaul()]{Bigdatabases}
+Michael A.~Bender i Bradley C.~Kuszmaul.
+\newblock \emph{{Data Structures and Algorithms for Big Databases}}.
+\newblock Tokutek.
+\newblock URL
+  \url{https://github.com/tpn/pdfs/blob/master/Tokutek%20-%20Data%20Structures%20and%20Algorithms%20for%20Big%20Databases.pdf}.
+
+\bibitem[A.~Bender et~al.(2005)A.~Bender, Farach-Colton, Pemmasani, Skiena, i
+  Sumazin]{lca2}
+Michael A.~Bender, Martín Farach-Colton, Giridhar Pemmasani, Steven Skiena, i
+  Pavel Sumazin.
+\newblock Lowest common ancestor in trees and directed acyclic graphs.
+\newblock \emph{Journal of Algorithms}, 57\penalty0 (2):\penalty0 75 -- 94,
+  2005.
+
+\bibitem[Aho et~al.(1973)Aho, Hopcroft, i Ullman]{lca3}
+A.~V. Aho, J.~E. Hopcroft, i J.D. Ullman.
+\newblock On finding lowest common ancestors in trees.
+\newblock \emph{STOC '73 Proceedings of the fifth annual ACM symposium on
+  Theory of computing}, stranice 253 -- 265, 1973.
+
+\bibitem[E.~Wood i L.Salzberg(2014)]{Kraken}
+Derrick E.~Wood i Steven L.Salzberg.
+\newblock {Kraken: ultrafast metagenomic sequence classification using exact
+  alignments}.
+\newblock \emph{Genome Biology 15:R46}, 2014.
+
+\bibitem[El~Moufatich(2008)]{lca1}
+Fayssal El~Moufatich.
+\newblock {Lowest Common Ancestor(LCA)}, 2008.
+
+\bibitem[Marçais i Kingsford(2011)]{jellyfish}
+Guillaume Marçais i Carl Kingsford.
+\newblock {A fast, lock-free approach for efficient parallel counting of
+  occurances of k-mers}.
+\newblock \emph{Bioinformatics}, 27\penalty0 (6):\penalty0 764 -- 770, 2011.
+
+\bibitem[Roberts et~al.(2004)Roberts, Hayes, R.Hunt, M.Mount, i A.Yorke]{minim}
+Michael Roberts, Wayne Hayes, Brian R.Hunt, Stephen M.Mount, i James A.Yorke.
+\newblock Reducing storage requirements for biological sequence comparison.
+\newblock \emph{Bioinformatics}, 20\penalty0 (18):\penalty0 3363 -- 3369, 2004.
 
 \end{thebibliography}
