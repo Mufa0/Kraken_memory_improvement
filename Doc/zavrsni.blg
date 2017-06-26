@@ -1,51 +1,49 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: zavrsni.aux
 The style file: fer.bst
 Database file #1: literatura.bib
 Warning--entry type for "lca1" isn't style-file defined
---line 46 of file literatura.bib
-Warning--empty year in Bigdatabases
-Warning--empty year in oetiket2007lshort
-You've used 8 entries,
+--line 93 of file literatura.bib
+You've used 12 entries,
             2773 wiz_defined-function locations,
-            643 strings with 6302 characters,
-and the built_in function-call counts, 3797 in all, are:
-= -- 330
-> -- 238
-< -- 5
-+ -- 80
-- -- 72
-* -- 311
-:= -- 585
-add.period$ -- 24
-call.type$ -- 8
-change.case$ -- 46
-chr.to.int$ -- 8
-cite$ -- 18
-duplicate$ -- 163
-empty$ -- 291
-format.name$ -- 86
-if$ -- 791
+            672 strings with 6744 characters,
+and the built_in function-call counts, 5230 in all, are:
+= -- 461
+> -- 278
+< -- 9
++ -- 96
+- -- 84
+* -- 391
+:= -- 802
+add.period$ -- 38
+call.type$ -- 12
+change.case$ -- 64
+chr.to.int$ -- 12
+cite$ -- 24
+duplicate$ -- 233
+empty$ -- 449
+format.name$ -- 102
+if$ -- 1108
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 48
-num.names$ -- 32
-pop$ -- 100
+missing$ -- 8
+newline$ -- 70
+num.names$ -- 48
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 52
 quote$ -- 0
-skip$ -- 134
+skip$ -- 195
 stack$ -- 0
-substring$ -- 133
-swap$ -- 21
+substring$ -- 195
+swap$ -- 23
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
-warning$ -- 2
-while$ -- 29
+type$ -- 132
+warning$ -- 0
+while$ -- 43
 width$ -- 0
-write$ -- 105
-(There were 3 warnings)
+write$ -- 161
+(There was 1 warning)

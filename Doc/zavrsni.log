@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.15)  9 JUN 2017 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.22)  27 JUN 2017 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **zavrsni.tex
 (./zavrsni.tex
-LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (./fer.cls
 Document Class: fer 
 (/usr/share/texmf-dist/tex/latex/base/report.cls
@@ -34,7 +34,7 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 (/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
@@ -62,14 +62,14 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@posthook=\toks17
 
 (/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -281,6 +281,8 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -301,12 +303,14 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -347,7 +351,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -371,39 +375,39 @@ Now handling font encoding U ...
    defining Unicode char U+2423 (decimal 9251)
 ))
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/04/23 3.9r The Babel package
+Package: babel 2017/05/19 3.10 The Babel package
 
 (/usr/share/texmf-dist/tex/generic/babel-croatian/croatian.ldf
 Language: croatian 2014/03/31 v1.3m Croatian support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/04/23 3.9r Babel common definitions
+File: babel.def 2017/05/19 3.10 Babel common definitions
 \babel@savecnt=\count91
 \U@D=\dimen111
 )))
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 96.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -428,7 +432,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/10 v2.15b AMS math features
+Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
@@ -448,20 +452,20 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count93
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count94
 \leftroot@=\count95
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count96
 \DOTSCASE@=\count97
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen116
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count98
 \c@MaxMatrixCols=\count99
 \dotsspace@=\muskip10
@@ -482,22 +486,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
 (/usr/share/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2015/06/22 v2.0b fixes to LaTeX (obsolete)
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
 
 
 Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 (fixltx2e)                All fixes are now in the LaTeX kernel.
 (fixltx2e)                See the latexrelease package for details.
 
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen123
 \captionmargin@=\dimen124
@@ -622,26 +628,30 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
 ) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip67
+\multirow@cntb=\count119
+\multirow@dima=\skip68
 \bigstrutjot=\dimen151
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count119
+\lst@mode=\count120
 \lst@gtempboxa=\box37
 \lst@token=\toks25
-\lst@length=\count120
+\lst@length=\count121
 \lst@currlwidth=\dimen152
-\lst@column=\count121
-\lst@pos=\count122
+\lst@column=\count122
+\lst@pos=\count123
 \lst@lostspace=\dimen153
 \lst@width=\dimen154
-\lst@newlines=\count123
-\lst@lineno=\count124
+\lst@newlines=\count124
+\lst@lineno=\count125
 \lst@maxwidth=\dimen155
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count125
-\lst@skipnumbers=\count126
+\c@lstnumber=\count126
+\lst@skipnumbers=\count127
 \lst@framebox=\box38
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -667,7 +677,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -687,7 +697,7 @@ Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
 (/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -896,19 +906,19 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count127
+\scratchcounter=\count128
 \scratchdimen=\dimen156
 \scratchbox=\box39
-\nofMPsegments=\count128
-\nofMParguments=\count129
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count130
+\MPscratchCnt=\count131
 \MPscratchDim=\dimen157
-\MPnumerator=\count131
-\makeMPintoPDFobject=\count132
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -942,6 +952,8 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
@@ -954,7 +966,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count133
+\c@lstlisting=\count134
 LaTeX Font Info:    Try loading font information for T1+phv on input line 68.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -996,161 +1008,154 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 
 ]
 Poglavlje 1.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 102.
 [1
 
-] [2]
+]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 108.
+
+[2] [3] [4]
 Poglavlje 2.
-[3
+[5
 
 ]
-Poglavlje 3.
-[4
-
-]
-</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=35, 610
+</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=40, 610
 .02097pt x 457.71pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg Graphi
 c file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbS
-tructure.jpg used on input line 147.
+tructure.jpg used on input line 154.
 (pdftex.def)             Requested size: 412.56497pt x 309.5625pt.
 
-[5 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
-[6]
-</home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg, id=42, 746.01291p
+[6 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
+[7]
+</home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg, id=47, 746.01291p
 t x 559.50967pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg Graphic file 
 (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/Wor
-k.jpg used on input line 187.
+k.jpg used on input line 195.
 (pdftex.def)             Requested size: 412.56497pt x 309.42168pt.
- [7 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 195.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 203.
 
-</home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=46, 803.0pt x 6
+</home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=48, 803.0pt x 6
 02.25pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg Graphic file (
 type jpg)
  <use /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca
-.jpg used on input line 199.
+.jpg used on input line 207.
 (pdftex.def)             Requested size: 412.56497pt x 309.43164pt.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 211.
 
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 204--220
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 212--228
 
  []
 
-[8] [9 </home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>] [10]
-Poglavlje 4.
-[11
+[9 </home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>] [10 </home/ma
+teo/Git/Kraken_memory_improvement/Pictures/lca.jpg>] [11]
+Poglavlje 3.
+[12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 268--289
+Underfull \hbox (badness 10000) in paragraph at lines 276--297
 
  []
 
-[12] [13]
-Poglavlje 5.
+[13] [14]
+Poglavlje 4.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-colo
-r.jpg, id=67, 803.0pt x 403.5075pt>
+r.jpg, id=72, 803.0pt x 403.5075pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database
 -color.jpg Graphic file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-
 color.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/sql
-ite-sample-database-color.jpg used on input line 304.
+ite-sample-database-color.jpg used on input line 312.
 (pdftex.def)             Requested size: 412.56497pt x 207.3192pt.
- [14
-
-] [15 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-databas
-e-color.jpg>] [16] [17]
-Poglavlje 6.
-[18
-
-] [19]
-Poglavlje 7.
-(./zavrsni.bbl [20
+ [15
 
 ]
-Underfull \hbox (badness 2368) in paragraph at lines 9--14
-[]\T1/ptm/m/n/12 Michael A. Ben-der i Brad-ley C. Ku-sz-maul.  \T1/ptm/m/it/12 
-Data Struc-tu-res and Al-go-rit-
+Overfull \hbox (11.16246pt too wide) in paragraph at lines 329--332
+\T1/ptm/m/n/12 hema.sql sa-drºi SQL na-redbe koji stva-raju struk-turu ori-gi-n
+alne baze po-da-taka, a dump.sql
+ []
+
+[16 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-
+color.jpg>] [17] [18]
+Poglavlje 5.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 390.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [19
+
+] [20]
+Poglavlje 6.
+(./zavrsni.bbl [21
+
+]
+Underfull \hbox (badness 5667) in paragraph at lines 66--70
+[]\T1/ptm/m/n/12 SQlite Tu-to-rial.  Sqlite sam-ple da-ta-base, 2017.  URL $\T1
+/pcr/m/n/12 http : / / www .
  []
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 9--14
-\T1/ptm/m/it/12 hms for Big Da-ta-ba-ses\T1/ptm/m/n/12 .  To-ku-tek.  URL $\T1/
-pcr/m/n/12 https : / / github . com / tpn /
+Underfull \hbox (badness 10000) in paragraph at lines 66--70
+\T1/pcr/m/n/12 sqlitetutorial . net / sqlite-[]sample-[]database$\T1/ptm/m/n/12
+ .  Pris-tu-pio:
  []
 
+[22
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--14
-\T1/pcr/m/n/12 pdfs / blob / master / Tokutek % 20-[] % 20Data % 20Structures %
- 20and %
+]
+Underfull \hbox (badness 10000) in paragraph at lines 72--78
+\T1/pcr/m/n/12 https : / / en . wikipedia . org / w / index . php ? title = Sen
+sitivity _
  []
 
-
-Underfull \hbox (badness 1910) in paragraph at lines 46--50
-[]\T1/ptm/m/n/12 T. Oeti-ket, H. Partl, Hyna, i E. Sc-hlegl.  \T1/ptm/m/it/12 T
-he not-so-short in-tro-duc-tion to
- []
-
-
-Underfull \hbox (badness 2726) in paragraph at lines 46--50
-\T1/ptm/m/it/12 La-tex\T1/ptm/m/n/12 .  URL $\T1/pcr/m/n/12 http : / / www . ct
-an . org / tex-[]archive / info / lshort /
- []
-
-) [21
-
-] [22]
+) [23] [24]
 Dodatak A.
-[23
+[25
 
 ] (./zavrsni.aux) )
-(\end occurred inside a group at level 2)
+(\end occurred inside a group at level 1)
 
-### simple group (level 2) entered at line 81 ({)
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9581 strings out of 493014
- 133638 string characters out of 6122320
- 270309 words of memory out of 5000000
- 12898 multiletter control sequences out of 15000+600000
- 81881 words of font info for 101 fonts, out of 8000000 for 9000
+ 9669 strings out of 492995
+ 134891 string characters out of 6121529
+ 273920 words of memory out of 5000000
+ 13003 multiletter control sequences out of 15000+600000
+ 64757 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,16n,67p,1517b,4485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,16n,67p,1512b,4619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/c
-ourier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></
-usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist
-/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/tim
-es/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
-are/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/ty
-pe1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on zavrsni.pdf (27 pages, 510194 bytes).
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
+/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhv
+r8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
+r/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on zavrsni.pdf (29 pages, 530815 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

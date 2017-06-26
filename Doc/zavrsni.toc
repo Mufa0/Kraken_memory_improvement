@@ -1,21 +1,20 @@
 \select@language {croatian}
 \contentsline {chapter}{\numberline {1}Uvod}{1}
-\contentsline {chapter}{\numberline {2}Definiranje problema}{3}
-\contentsline {chapter}{\numberline {3}Strukture podataka i algoritmi u Kraken-u}{4}
-\contentsline {subsection}{\numberline {3.0.1}Baza podataka}{4}
-\contentsline {subsubsection}{Kreiranje baze podataka}{4}
-\contentsline {subsubsection}{Strukture baze podataka}{5}
-\contentsline {subsection}{\numberline {3.0.2}Algoritam klasifikacije podataka}{7}
-\contentsline {subsection}{\numberline {3.0.3}LCA(\textit {Lower Common Ancestor})}{8}
-\contentsline {chapter}{\numberline {4}Algoritmi indeksiranja i pretrage}{11}
-\contentsline {subsection}{\numberline {4.0.1}Minimizer - algoritam za reduciranje podataka}{11}
-\contentsline {subsection}{\numberline {4.0.2}Binarno pretra\IeC {\v z}ivanje}{12}
-\contentsline {chapter}{\numberline {5}Pseudokod i razrada algoritma}{14}
-\contentsline {subsubsection}{Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{14}
-\contentsline {subsubsection}{Podjela baze podataka}{14}
-\contentsline {subsubsection}{Strani\IeC {\v c}enje}{16}
-\contentsline {chapter}{\numberline {6}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{18}
-\contentsline {subsection}{\numberline {6.0.1}Za budu\IeC {\'c}nost}{19}
-\contentsline {chapter}{\numberline {7}Zaklju\IeC {\v c}ak}{20}
-\contentsline {chapter}{Literatura}{21}
-\contentsline {chapter}{Dodatak \numberline {A}Upute za kori\IeC {\v s}tenje programske potpore}{23}
+\contentsline {chapter}{\numberline {2}Strukture podataka i algoritmi u Kraken-u}{5}
+\contentsline {subsection}{\numberline {2.0.1}Baza podataka}{5}
+\contentsline {subsubsection}{Kreiranje baze podataka}{5}
+\contentsline {subsubsection}{Strukture baze podataka}{6}
+\contentsline {subsection}{\numberline {2.0.2}Algoritam klasifikacije podataka}{8}
+\contentsline {subsection}{\numberline {2.0.3}LCA(\textit {Lower Common Ancestor})}{9}
+\contentsline {chapter}{\numberline {3}Algoritmi indeksiranja i pretrage}{12}
+\contentsline {subsection}{\numberline {3.0.1}Minimizer - algoritam za reduciranje podataka}{12}
+\contentsline {subsection}{\numberline {3.0.2}Binarno pretra\IeC {\v z}ivanje}{13}
+\contentsline {chapter}{\numberline {4}Pseudokod i razrada algoritma}{15}
+\contentsline {subsubsection}{Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{15}
+\contentsline {subsubsection}{Podjela baze podataka}{15}
+\contentsline {subsubsection}{Strani\IeC {\v c}enje}{17}
+\contentsline {chapter}{\numberline {5}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{19}
+\contentsline {subsection}{\numberline {5.0.1}Za budu\IeC {\'c}nost}{20}
+\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{21}
+\contentsline {chapter}{Literatura}{22}
+\contentsline {chapter}{Dodatak \numberline {A}Upute za kori\IeC {\v s}tenje programske potpore}{25}
