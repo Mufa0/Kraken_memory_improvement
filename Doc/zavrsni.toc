@@ -1,20 +1,20 @@
 \select@language {croatian}
 \contentsline {chapter}{\numberline {1}Uvod}{1}
 \contentsline {chapter}{\numberline {2}Strukture podataka i algoritmi u Kraken-u}{5}
-\contentsline {subsection}{\numberline {2.0.1}Baza podataka}{5}
+\contentsline {section}{\numberline {2.1}Baza podataka}{5}
 \contentsline {subsubsection}{Kreiranje baze podataka}{5}
-\contentsline {subsubsection}{Strukture baze podataka}{6}
-\contentsline {subsection}{\numberline {2.0.2}Algoritam klasifikacije podataka}{8}
-\contentsline {subsection}{\numberline {2.0.3}LCA(\textit {Lower Common Ancestor})}{9}
+\contentsline {subsection}{\numberline {2.1.1}Strukture baze podataka}{6}
+\contentsline {section}{\numberline {2.2}Algoritam klasifikacije podataka}{8}
+\contentsline {section}{\numberline {2.3}LCA(\textit {Lower Common Ancestor})}{9}
 \contentsline {chapter}{\numberline {3}Algoritmi indeksiranja i pretrage}{12}
-\contentsline {subsection}{\numberline {3.0.1}Minimizer - algoritam za reduciranje podataka}{12}
-\contentsline {subsection}{\numberline {3.0.2}Binarno pretra\IeC {\v z}ivanje}{13}
+\contentsline {section}{\numberline {3.1}Minimizer - algoritam za reduciranje podataka}{12}
+\contentsline {section}{\numberline {3.2}Binarno pretra\IeC {\v z}ivanje}{13}
 \contentsline {chapter}{\numberline {4}Pseudokod i razrada algoritma}{15}
-\contentsline {subsubsection}{Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{15}
-\contentsline {subsubsection}{Podjela baze podataka}{15}
-\contentsline {subsubsection}{Strani\IeC {\v c}enje}{17}
+\contentsline {section}{\numberline {4.1}Problemi kod kori\IeC {\v s}tenja Kraken baze podataka}{15}
+\contentsline {section}{\numberline {4.2}Podjela baze podataka}{15}
+\contentsline {section}{\numberline {4.3}Strani\IeC {\v c}enje}{17}
 \contentsline {chapter}{\numberline {5}Analiza u\IeC {\v c}inkovitosti rje\IeC {\v s}enja}{19}
-\contentsline {subsection}{\numberline {5.0.1}Za budu\IeC {\'c}nost}{20}
+\contentsline {section}{\numberline {5.1}Za budu\IeC {\'c}nost}{20}
 \contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{21}
 \contentsline {chapter}{Literatura}{22}
 \contentsline {chapter}{Dodatak \numberline {A}Upute za kori\IeC {\v s}tenje programske potpore}{25}

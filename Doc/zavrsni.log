@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.22)  27 JUN 2017 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.22)  28 JUN 2017 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,54 +1009,56 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 ]
 Poglavlje 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 102.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 101.
 [1
 
 ]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 108.
+               Default added (so using `tbp') on input line 107.
 
 [2] [3] [4]
 Poglavlje 2.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 134.
 [5
 
 ]
-</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=40, 610
-.02097pt x 457.71pt>
+</home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg, id=40, 787
+.94376pt x 591.20876pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg Graphi
 c file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/DbS
-tructure.jpg used on input line 154.
-(pdftex.def)             Requested size: 412.56497pt x 309.5625pt.
+tructure.jpg used on input line 153.
+(pdftex.def)             Requested size: 412.56497pt x 309.55028pt.
 
 [6 </home/mateo/Git/Kraken_memory_improvement/Pictures/DbStructure.jpg>]
 [7]
-</home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg, id=47, 746.01291p
-t x 559.50967pt>
+</home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg, id=47, 963.6pt x 
+722.7pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg Graphic file 
 (type jpg)
-
-<use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
+ <use /home/mateo/Git/Kraken_memory_improvement/Pictures/Work.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/Wor
-k.jpg used on input line 195.
-(pdftex.def)             Requested size: 412.56497pt x 309.42168pt.
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 203.
+k.jpg used on input line 194.
+(pdftex.def)             Requested size: 412.56497pt x 309.42061pt.
 
-</home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=48, 803.0pt x 6
+[8]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 202.
+
+</home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg, id=51, 803.0pt x 6
 02.25pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg Graphic file (
 type jpg)
  <use /home/mateo/Git/Kraken_memory_improvement/Pictures/lca.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/lca
-.jpg used on input line 207.
+.jpg used on input line 206.
 (pdftex.def)             Requested size: 412.56497pt x 309.43164pt.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 212--228
+Underfull \hbox (badness 10000) in paragraph at lines 211--227
 
  []
 
@@ -1066,7 +1068,7 @@ Poglavlje 3.
 [12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 276--297
+Underfull \hbox (badness 10000) in paragraph at lines 275--296
 
  []
 
@@ -1074,19 +1076,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--297
 Poglavlje 4.
 
 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-colo
-r.jpg, id=72, 803.0pt x 403.5075pt>
+r.jpg, id=75, 803.0pt x 403.5075pt>
 File: /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database
 -color.jpg Graphic file (type jpg)
 
 <use /home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-
 color.jpg>
 Package pdftex.def Info: /home/mateo/Git/Kraken_memory_improvement/Pictures/sql
-ite-sample-database-color.jpg used on input line 312.
+ite-sample-database-color.jpg used on input line 311.
 (pdftex.def)             Requested size: 412.56497pt x 207.3192pt.
  [15
 
 ]
-Overfull \hbox (11.16246pt too wide) in paragraph at lines 329--332
+Overfull \hbox (11.16246pt too wide) in paragraph at lines 328--331
 \T1/ptm/m/n/12 hema.sql sa-drºi SQL na-redbe koji stva-raju struk-turu ori-gi-n
 alne baze po-da-taka, a dump.sql
  []
@@ -1094,7 +1096,7 @@ alne baze po-da-taka, a dump.sql
 [16 </home/mateo/Git/Kraken_memory_improvement/Pictures/sqlite-sample-database-
 color.jpg>] [17] [18]
 Poglavlje 5.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 390.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 389.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -1104,22 +1106,22 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 Poglavlje 6.
 (./zavrsni.bbl [21
 
+] [22
+
 ]
-Underfull \hbox (badness 5667) in paragraph at lines 66--70
+Underfull \hbox (badness 5667) in paragraph at lines 72--76
 []\T1/ptm/m/n/12 SQlite Tu-to-rial.  Sqlite sam-ple da-ta-base, 2017.  URL $\T1
 /pcr/m/n/12 http : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--70
+Underfull \hbox (badness 10000) in paragraph at lines 72--76
 \T1/pcr/m/n/12 sqlitetutorial . net / sqlite-[]sample-[]database$\T1/ptm/m/n/12
  .  Pris-tu-pio:
  []
 
-[22
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 72--78
+Underfull \hbox (badness 10000) in paragraph at lines 78--84
 \T1/pcr/m/n/12 https : / / en . wikipedia . org / w / index . php ? title = Sen
 sitivity _
  []
@@ -1134,28 +1136,31 @@ Dodatak A.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 9669 strings out of 492995
- 134891 string characters out of 6121529
+ 9688 strings out of 492995
+ 135142 string characters out of 6121529
  273920 words of memory out of 5000000
- 13003 multiletter control sequences out of 15000+600000
- 64757 words of font info for 88 fonts, out of 8000000 for 9000
+ 13018 multiletter control sequences out of 15000+600000
+ 81036 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,16n,67p,1512b,4619s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,16n,67p,1546b,4617s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
-/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhv
-r8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/ur
-w/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
-r/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (29 pages, 530815 bytes).
+c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/u
+rw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrro8a.pf
+b></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-
+dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
+r/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/font
+s/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on zavrsni.pdf (29 pages, 694569 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 167 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

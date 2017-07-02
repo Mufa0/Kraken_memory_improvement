@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -61,6 +61,12 @@ Guillaume Marçais i Carl Kingsford.
 Michael Roberts, Wayne Hayes, Brian R.Hunt, Stephen M.Mount, i James A.Yorke.
 \newblock Reducing storage requirements for biological sequence comparison.
 \newblock \emph{Bioinformatics}, 20\penalty0 (18):\penalty0 3363 -- 3369, 2004.
+
+\bibitem[Rosen~L. et~al.(2011)Rosen~L., Reichenberger~L., i Rosenfeld~M.]{NBC}
+Gail Rosen~L., Erin Reichenberger~L., i Aaron Rosenfeld~M.
+\newblock {NBC: the Naïve Bayes Classification tool webserver for taxonomic
+  classification of metagenomic reads}.
+\newblock \emph{Bioinformatics 27(1):127 - 129.}, 2011.
 
 \bibitem[{SQlite Tutorial}(2017)]{Database}
 {SQlite Tutorial}.
